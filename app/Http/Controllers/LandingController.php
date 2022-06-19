@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 
 class LandingController extends Controller
 {
+    // Intro Page
     public function index()
     {
         return view('landing.intro');

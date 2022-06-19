@@ -1,0 +1,8 @@
+/* Hamburger Navbar + Mencegah Bug */
+@media (min-width: 1024px) {
+  .top-navbar {
+    display: -webkit-inline-box !important;
+    display: -ms-inline-flexbox !important;
+    display: inline-flex !important;
+  }
+}
