@@ -20,7 +20,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::resource('/', LandingController::class);
 
-
 // auth
 Route::get('/login', [LandingController::class, 'login'])->middleware('guest')->name('login');
 Route::post('/login', [LandingController::class, 'authenticate']);
@@ -29,5 +28,8 @@ Route::delete('/logout', [LandingController::class, 'logout']);
 Route::get('/register', [LandingController::class, 'register'])->middleware('guest');
 Route::post('/register', [LandingController::class, 'store']);
 
-// home
-Route::get('/home', [LandingController::class, 'home'])->middleware('auth');
+// task
+Route::get('/task', [LandingController::class, 'task'])->middleware('auth');
+
+// task
+Route::get('/profile', [LandingController::class, 'profile'])->middleware('auth');

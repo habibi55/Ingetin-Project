@@ -11,6 +11,8 @@ module.exports = {
                 body: "#17171F",
                 primer: "#3AAFA9",
                 primer_2: "#2B7A78",
+                primer_3: "#3E4785",
+                primer_3_hover: "#252b50",
                 secondary: "#F17A7E",
                 tersier: "#3c3f58",
                 nav: "#0072AE",

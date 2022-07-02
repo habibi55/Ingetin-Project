@@ -1,3 +1,38 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .section-task {
+    @apply shrink-0 h-full w-110 bg-gray-100 rounded-lg;
+  }
+
+  /* Pop Up Task */
+  .form {
+    @apply flex flex-row items-center mb-6;
+  }
+
+  .label {
+    @apply flex my-4;
+  }
+
+  .kategori {
+    @apply w-1/4 font-normal text-gray-500;
+  }
+
+  .icon-popup {
+    @apply h-5 w-5 mr-2;
+  }
+
+  .nav-small {
+    @apply md:hidden w-full text-white rounded-md px-4 py-2 bg-primer_3 hover:bg-primer_3_hover;
+  }
+
+}
+
+
+@layer utilities {
+  .w-110 {
+    width : 28rem;
+}
+}

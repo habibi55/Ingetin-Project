@@ -16,10 +16,16 @@ class LandingController extends Controller
         return view('landing.intro');
     }
 
-    // HOME FUNCTION
-    public function home()
+    // TASK FUNCTION
+    public function task()
     {
-        return view('landing.home');
+        return view('main.task');
+    }
+
+    // PROFILE FUNCTION
+    public function profile()
+    {
+        return view('main.profile');
     }
 
 
@@ -64,7 +70,7 @@ class LandingController extends Controller
         $isRememberMe = $request->post('remember-me') ? true : false;
         if (Auth::attempt($credentials, $isRememberMe)) {
             $request->session()->regenerate();
-            return redirect()->intended('home');
+            return redirect()->intended('task');
         }
 
         return back()->with('loginError', 'Incorrect email address and / or password!');
