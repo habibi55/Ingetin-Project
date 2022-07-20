@@ -44,10 +44,10 @@
       <div class="w-full flex flex-col items-start lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto lg:items-center
         lg:h-auto space-y-4 lg:space-y-0 lg:space-x-6">
         <button class="w-full lg:w-auto border-2 lg:border-0 font-medium rounded-md px-4 py-2 hover:bg-gray-200"> <a
-            href="/login">Log
+            href="{{ route('login') }}">Log
             In</a></button>
         <button class="w-full lg:w-auto text-white font-medium bg-primer px-3 py-2 rounded-md hover:bg-primer_2"> <a
-            href="/register">Get Ingetin
+            href="{{ route('register') }}">Get Ingetin
             for
             free</a>
         </button>
@@ -66,7 +66,7 @@
         u
         need.</p>
       <button class="w-fit text-white font-medium bg-primer px-3 py-2 rounded-md hover:bg-primer_2"> <a
-          href="/register">Get Ingetin
+          href="{{ route('register') }}">Get Ingetin
           for
           free</a>
       </button>

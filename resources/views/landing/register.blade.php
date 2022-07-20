@@ -52,7 +52,7 @@
       </div>
 
       <div class="w-full text-center mt-4">
-        Already have account? <a class="text-green-600 font-medium" href="/login">Sign in</a>
+        Already have account? <a class="text-green-600 font-medium" href="{{ route('login') }}">Sign in</a>
       </div>
 
     </form>

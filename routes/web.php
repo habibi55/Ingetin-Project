@@ -1,7 +1,10 @@
 <?php
 
-use App\Http\Controllers\LandingController;
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\LandingController;
+use App\Http\Controllers\ProfileController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -21,15 +24,17 @@ use Illuminate\Support\Facades\Route;
 Route::resource('/', LandingController::class);
 
 // auth
-Route::get('/login', [LandingController::class, 'login'])->middleware('guest')->name('login');
-Route::post('/login', [LandingController::class, 'authenticate']);
-Route::delete('/logout', [LandingController::class, 'logout']);
+Route::get('login', [LandingController::class, 'login'])->middleware('guest')->name('login');
+Route::post('login', [LandingController::class, 'authenticate']);
+Route::delete('logout', [LandingController::class, 'logout']);
 
-Route::get('/register', [LandingController::class, 'register'])->middleware('guest');
-Route::post('/register', [LandingController::class, 'store']);
-
-// task
-Route::get('/task', [LandingController::class, 'task'])->middleware('auth');
+Route::get('register', [LandingController::class, 'register'])->middleware('guest')->name('register');
+Route::post('register', [LandingController::class, 'store']);
 
 // task
-Route::get('/profile', [LandingController::class, 'profile'])->middleware('auth');
+Route::get('task', [LandingController::class, 'task'])->middleware('auth')->name('task');
+// Route::resource('task', LandingController::class);
+
+// Profile
+Route::get('profile', [ProfileController::class, 'index'])->middleware('auth')->name('profile');
+// Route::resource('profile', ProfileController::class);

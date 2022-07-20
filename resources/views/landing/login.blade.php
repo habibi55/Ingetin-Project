@@ -23,7 +23,7 @@
       </div>
       @endif
 
-      <form class="w-full" action="/login" method="POST">
+      <form class="w-full" action="{{ route('login') }}" method="POST">
         @csrf
 
         <div class="flex flex-col">
@@ -46,7 +46,7 @@
         </div>
 
         <p class="text-center py-5">
-          Dont have account? <a href="/register" class="text-green-700">Sign up</a>
+          Dont have account? <a href="{{ route('register') }}" class="text-green-700">Sign up</a>
         </p>
 
       </form>

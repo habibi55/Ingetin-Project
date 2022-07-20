@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\Task;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
@@ -21,13 +22,6 @@ class LandingController extends Controller
     {
         return view('main.task');
     }
-
-    // PROFILE FUNCTION
-    public function profile()
-    {
-        return view('main.profile');
-    }
-
 
     // REGISTER FUNCTION
     public function register()
