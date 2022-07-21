@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\MainController;
 
 
 /*
@@ -26,14 +27,19 @@ Route::resource('/', LandingController::class);
 // auth
 Route::get('login', [LandingController::class, 'login'])->middleware('guest')->name('login');
 Route::post('login', [LandingController::class, 'authenticate']);
-Route::delete('logout', [LandingController::class, 'logout']);
+Route::delete('logout', [LandingController::class, 'logout'])->name('logout');;
 
 Route::get('register', [LandingController::class, 'register'])->middleware('guest')->name('register');
 Route::post('register', [LandingController::class, 'store']);
 
-// task
+// Task
 Route::get('task', [LandingController::class, 'task'])->middleware('auth')->name('task');
 // Route::resource('task', LandingController::class);
+
+// Route::get('form-task', [MainController::class, 'formtask'])->middleware('auth')->name('form-task');
+
+// Tambah Task
+Route::resource('task', MainController::class);
 
 // Profile
 Route::get('profile', [ProfileController::class, 'index'])->middleware('auth')->name('profile');
