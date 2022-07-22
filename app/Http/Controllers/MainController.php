@@ -12,6 +12,10 @@ use App\Models\Task;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 
+use Illuminate\Support\Str;
+
+use App\Models\Event;
+
 use File;
 
 class MainController extends Controller
@@ -21,22 +25,14 @@ class MainController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        $tasks = Task::where('users_id', Auth::user()->id)->orderBy('created_at', 'desc')->get();
 
-        return view('main.task', compact('tasks'));
-    }
 
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        return view('main.create-task');
-    }
+
 
     /**
      * Store a newly created resource in storage.
@@ -62,12 +58,7 @@ class MainController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Task $task)
-    {
-        $photo_task = Task::where('photo', $task['id'])->get();
 
-        return view('main.edit-task', compact('task', 'photo_task'));
-    }
 
     /**
      * Update the specified resource in storage.
@@ -91,73 +82,78 @@ class MainController extends Controller
 
     //Custom
 
+    public function index()
+    {
+        $tasks = Task::where('users_id', Auth::user()->id)->orderBy('created_at', 'desc')->get();
+
+        return view('main.task', compact('tasks'));
+    }
+
+    public function create()
+    {
+        return view('main.create-task');
+    }
+
     public function store(StoreTask $request)
     {
-        $data = $request->all();
-
-        $data['users_id'] = Auth::user()->id;
-
-        // add to Task
-        $service = Task::create($data);
-
-        // add to thumbnail service
-        if ($request->hasfile('photo')) {
-            foreach ($request->file('photo') as $file) {
-                $path = $file->store(
-                    'assets/task/photo',
-                    'public'
-                );
-            }
+        $this->validate($request, [
+            'photo' => 'required|mimes:jpeg,png,jpg',
+        ]);
+        if ($request->hasFile('photo')) {
+            $filenameWithExt = Str::slug($request->get('title'));
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('photo')->getClientOriginalExtension();
+            $filenameSimpan = $filename . '_' . time() . '.' . $extension;
+            $path = $request->file('photo')->move('storage/photo', $filenameSimpan);
+        } else {
+            $filenameSimpan = NULL;
         }
+
+        $tasks = Task::create([
+            'title' => $request->get('title'),
+            'status' => $request->get('status'),
+            'description' => $request->get('description'),
+            'photo' => $filenameSimpan,
+            'users_id' => Auth::id(),
+        ]);
 
         return redirect()->route('task.index');
     }
 
-    public function update(UpdateTask $request, Task $task)
+    // EDIT TASK
+    public function edit($id)
     {
-        $data = $request->all();
+        $task = Task::find($id);
 
-        // update to service
-        $task->update($data);
+        return view('main.edit-task', compact('task'));
+    }
 
+    public function update(UpdateTask $request, $id)
+    {
+        $task = Task::find($id);
 
-        // update to thumbnail service
-        if ($request->hasfile('photo')) {
-            foreach ($request->file('photo') as $key => $file) {
-                // get old photo thumbnail
-                $get_photo = Task::where('photo', $key)->first();
+        $this->validate($request, [
+            'photo' => 'mimes:jpeg,png,jpg',
+        ]);
 
-                // store photo
-                $path = $file->store(
-                    'assets/task/photo',
-                    'public'
-                );
-
-                // update thumbail
-                $photo_task = Task::find($key);
-                $photo_task->photo = $path;
-                $photo_task->save();
-
-                // delete old photo photo
-                $data = 'storage/' . $get_photo['photo'];
-                if (File::exists($data)) {
-                    File::delete($data);
-                } else {
-                    File::delete('storage/app/public/' . $get_photo['photo']);
-                }
-            }
+        if ($request->hasFile('photo')) {
+            $filenameWithExt = Str::slug($request->get('title'));
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('photo')->getClientOriginalExtension();
+            $filenameSimpan = $filename . '_' . time() . '.' . $extension;
+            $path = $request->file('photo')->move('storage/photo', $filenameSimpan);
+            $oldFileName = $task->photo;
+            File::delete('storage/photo/' . $oldFileName);
+            $task->photo = $filenameSimpan;
+        } else {
+            $filenameSimpan = $task->photo;
         }
 
-        // add to thumbnail service
-        if ($request->hasfile('photo')) {
-            foreach ($request->file('photo') as $file) {
-                $path = $file->store(
-                    'assets/task/photo',
-                    'public'
-                );
-            }
-        }
 
+        $task->title = $request['title'];
+        $task->description = $request['description'];
+        $task->status = $request['status'];
+        $task->update();
 
         return redirect()->route('task.index');
     }

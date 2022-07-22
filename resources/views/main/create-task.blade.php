@@ -41,10 +41,11 @@
           </div> --}}
 
         <select id="status" name="status" autocomplete="status" class="block w-full px-3 py-3 pr-10 mt-1 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
-            <option>Unscheduled</option>
-            <option value="1">Not Started</option>
-            <option value="2">In Progress</option>
-            <option value="3">Completed</option>
+            <option>Pilih Status</option>
+            <option value="1">Unscheduled</option>
+            <option value="2">Not Started</option>
+            <option value="3">In Progress</option>
+            <option value="4">Completed</option>
         </select>
         </div>
       </div>
@@ -106,8 +107,17 @@
           </svg>
           <h1 class="text-lg font-medium text-black">Foto</h1>
         </div>
-        <div class="w-8/12 flex">
-          <input type="file" name="photo" id="photo" autocomplete="photo"  class="w-full rounded-lg bg-slate-100 p-2"  alt="">
+        <div class="w-8/12 flex flex-row">
+          {{-- @if (auth()->task()->first()->photo != NULL)
+             <img src="{{ url(Storage::url(auth()->task()->first()->photo)) }}" alt="photo profile" class="w-20 h-20">
+          @else
+            
+          @endif
+        <label for="choose" class="px-3 py-2 ml-5 text-sm font-medium leading-4 text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">Choose File</label>
+
+        <input type="file" accept="image/*" id="choose" name="photo" hidden> --}}
+
+          <input type="file" name="photo" id="photo" autocomplete="photo" class="w-full rounded-lg bg-slate-100 p-2"  value="{{ old('photo') }}">
         </div>
       </div>
 
@@ -120,7 +130,7 @@
           <h1 class="text-lg font-medium text-black">Deskripsi</h1>
         </div>
         <div class="w-8/12 flex">
-          <textarea name="description" id="description" autocomplete="description" class="w-full rounded-lg bg-slate-100 p-2"  cols="30" rows="5" value="{{ old('description') }}" required></textarea>
+          <textarea name="description" id="description" autocomplete="description" class="w-full rounded-lg bg-slate-100 p-2"  cols="30" rows="5" value="{{ old('description') }}"></textarea>
         </div>
       </div>
 

@@ -24,7 +24,7 @@ use App\Http\Controllers\MainController;
 
 Route::resource('/', LandingController::class);
 
-// auth
+// Auth
 Route::get('login', [LandingController::class, 'login'])->middleware('guest')->name('login');
 Route::post('login', [LandingController::class, 'authenticate']);
 Route::delete('logout', [LandingController::class, 'logout'])->name('logout');;
@@ -36,11 +36,8 @@ Route::post('register', [LandingController::class, 'store']);
 Route::get('task', [LandingController::class, 'task'])->middleware('auth')->name('task');
 // Route::resource('task', LandingController::class);
 
-// Route::get('form-task', [MainController::class, 'formtask'])->middleware('auth')->name('form-task');
-
 // Tambah Task
 Route::resource('task', MainController::class);
 
 // Profile
 Route::get('profile', [ProfileController::class, 'index'])->middleware('auth')->name('profile');
-// Route::resource('profile', ProfileController::class);

@@ -27,6 +27,9 @@ class UpdateTask extends FormRequest
   public function rules()
   {
     return [
+      'photo' => [
+        'nullable', 'file', 'max:1024',
+      ],
       'title' => [
         'required', 'string', 'max:255',
       ],
