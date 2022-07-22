@@ -736,20 +736,8 @@ video {
 .max-h-96 {
   max-height: 24rem;
 }
-.max-h-28 {
-  max-height: 7rem;
-}
 .max-h-24 {
   max-height: 6rem;
-}
-.max-h-32 {
-  max-height: 8rem;
-}
-.max-h-64 {
-  max-height: 16rem;
-}
-.max-h-80 {
-  max-height: 20rem;
 }
 .min-h-screen {
   min-height: 100vh;
@@ -797,9 +785,6 @@ video {
 }
 .max-w-6xl {
   max-width: 72rem;
-}
-.max-w-md {
-  max-width: 28rem;
 }
 .flex-none {
   flex: none;
@@ -1016,10 +1001,6 @@ video {
   -o-object-fit: contain;
      object-fit: contain;
 }
-.object-cover {
-  -o-object-fit: cover;
-     object-fit: cover;
-}
 .p-6 {
   padding: 1.5rem;
 }
@@ -1112,6 +1093,9 @@ video {
 .text-center {
   text-align: center;
 }
+.text-start {
+  text-align: start;
+}
 .font-poppins {
   font-family: Poppins, sans-serif;
 }
@@ -1142,6 +1126,10 @@ video {
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
+}
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 .font-semibold {
   font-weight: 600;

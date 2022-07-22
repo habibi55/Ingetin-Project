@@ -81,7 +81,6 @@ class MainController extends Controller
     }
 
     //Custom
-
     public function index()
     {
         $tasks = Task::where('users_id', Auth::user()->id)->orderBy('created_at', 'desc')->get();

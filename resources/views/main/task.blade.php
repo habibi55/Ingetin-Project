@@ -2,10 +2,10 @@
 
 @section('content')
 
-<!-- START:Pembagian Task (FLEX)-->
+<!-- Pembagian Task (FLEX)-->
 <main class="bg-white flex gap-4 pb-14 px-6 pt-24 justify-between">
 
-  <!-- START:Unscheduled -->
+  <!-- Unscheduled -->
   <div class="section-task">
     <div class="flex items-center rounded-t-lg bg-blue-400 p-1"></div>
     <div class="flex justify-between items-center px-4 py-1">
@@ -18,7 +18,7 @@
       </a>
     </div>
 
-    <!-- START:Card Task -->
+    <!-- Card Task -->
     <div class="flex flex-col flex-nowrap px-3 pb-3 gap-3">
 
       @forelse ($tasks as $key => $task)
@@ -128,11 +128,11 @@
 
       </div>
 
-    <!-- END:Card Task -->
+  
   </div>
-  <!-- END:Unscheduled -->
+  
 
-  <!-- START:Not Started -->
+  <!-- Not Started -->
   <div class="section-task">
     <div class="flex items-center rounded-t-lg bg-red-400  p-1">
     </div>

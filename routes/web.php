@@ -34,10 +34,12 @@ Route::post('register', [LandingController::class, 'store']);
 
 // Task
 Route::get('task', [LandingController::class, 'task'])->middleware('auth')->name('task');
-// Route::resource('task', LandingController::class);
 
 // Tambah Task
 Route::resource('task', MainController::class);
 
 // Profile
-Route::get('profile', [ProfileController::class, 'index'])->middleware('auth')->name('profile');
+// Route::get('profile', [ProfileController::class, 'index'])->middleware('auth')->name('profile');
+
+// Edit Profile
+Route::resource('profile', ProfileController::class)->middleware(['auth']);

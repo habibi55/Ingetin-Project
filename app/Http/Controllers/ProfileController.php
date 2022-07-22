@@ -4,9 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 
-use App\Http\Requests\UpdateProfile;
-use Auth;
-use File;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 use App\Models\User;
@@ -18,10 +16,7 @@ class ProfileController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        return view('main.profile');
-    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -61,10 +56,6 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
@@ -87,17 +78,29 @@ class ProfileController extends Controller
     }
 
     //CUSTOM
-
-    //Update
-    public function update(UpdateProfile $request_profile)
+    public function index(Request $request)
     {
-        $data_profile = $request_profile->all();
+        $id = Auth::id();
+        $profile = User::all()->where('id', $id)->firstOrFail();
 
-        // proses save to user
-        $user = User::find(Auth::user()->id);
-        $user->update($data_profile);
+        return view('main.profile', compact('profile'));
+    }
 
+    public function edit($id)
+    {
+        $detail = User::find($id);
 
-        return back();
+        return view('main.edit-profile', compact('detail'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $id = Auth::id();
+        $profile = User::find($id);
+
+        $profile->name = $request['name'];
+        $profile->email = $request['email'];
+        $profile->update();
+        return redirect()->route('profile.index');
     }
 }
