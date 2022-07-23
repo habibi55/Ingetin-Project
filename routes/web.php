@@ -1,10 +1,12 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\DetailController;
 
 
 /*
@@ -18,9 +20,6 @@ use App\Http\Controllers\MainController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('intro');
-// });
 
 Route::resource('/', LandingController::class);
 
@@ -36,10 +35,10 @@ Route::post('register', [LandingController::class, 'store']);
 Route::get('task', [LandingController::class, 'task'])->middleware('auth')->name('task');
 
 // Tambah Task
-Route::resource('task', MainController::class);
+Route::resource('task', MainController::class)->middleware(['auth']);
 
-// Profile
-// Route::get('profile', [ProfileController::class, 'index'])->middleware('auth')->name('profile');
+Route::get('task-detail/{id}', [DetailController::class, 'index'])->name('task-detail');
+// Route::resource('task-detail', DetailController::class);
 
 // Edit Profile
 Route::resource('profile', ProfileController::class)->middleware(['auth']);

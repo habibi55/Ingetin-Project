@@ -2,26 +2,16 @@
 
 @section('content')
 
-<div class="flex justify-center md:px-24 lg:px-96 pt-28">
-    <form class="w-full" action="{{ route('task.update', [$task->id]) }}" method="POST" enctype="multipart/form-data">
-
-      @method('PUT')
-      @csrf
-
-      <h1 class="font-semibold text-2xl mb-4">Edit Task</h1>
+<div class="flex flex-col justify-center md:px-24 lg:px-96 pt-28">
+      <h1 class="font-semibold text-2xl mb-4">Detail Task</h1>
 
       <div class="form">
         <div class="w-4/12 flex flex-row items-center">
-          <svg xmlns="http://www.w3.org/2000/svg" class="ionicon h-5 w-5 mr-2" viewBox="0 0 512 512">
-            <path
-              d="M342.43 238.23l-74.13 89.09a16 16 0 01-24.6 0l-74.13-89.09A16 16 0 01181.86 212h148.28a16 16 0 0112.29 26.23z" />
-            <path d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z" fill="none"
-              stroke="currentColor" stroke-miterlimit="10" stroke-width="32" />
-          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" class="ionicon h-5 w-5 mr-2" viewBox="0 0 512 512"><title>Clipboard</title><path d="M336 64h32a48 48 0 0148 48v320a48 48 0 01-48 48H144a48 48 0 01-48-48V112a48 48 0 0148-48h32" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"/><rect x="176" y="32" width="160" height="64" rx="26.13" ry="26.13" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"/></svg>
           <h1 class="text-lg font-medium text-black">Judul</h1>
         </div>
         <div class="flex w-8/12">
-          <input name="title" type="text" autocomplete="title" class="w-full bg-slate-100 rounded-lg p-2" value="{{ $task->title ?? '' }}"  required>
+          <div class="w-full bg-slate-100 rounded-lg p-2"> {{ $tasks->title }} </div>
         </div>
       </div>
 
@@ -36,15 +26,30 @@
           <h1 class="text-lg font-medium text-black">Status</h1>
         </div>
 
-        <div class="flex w-8/12 justify-start">
+        <div class="flex w-8/12 justify-start">     
+          @if ($tasks->status == '1')
+            <div class="bg-purple-400 text-base rounded-sm text-center px-2">
+              Unscheduled
+            </div>
+          @endif
+          
+          @if ($tasks->status == '2')
+            <div class="bg-red-400 text-base rounded-sm text-center px-2">
+              Not Started
+            </div>
+          @endif
 
-        <select id="status" name="status" autocomplete="status" class="block w-full px-3 py-3 pr-10 mt-1 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
-            <option>Pilih Status</option>
-            <option value="1" {{ $task->status == '1' ? 'selected' : '' }}>Unscheduled</option>
-            <option value="2" {{ $task->status == '2' ? 'selected' : '' }}>Not Started</option>
-            <option value="3" {{ $task->status == '3' ? 'selected' : '' }}>In Progress</option>
-            <option value="4" {{ $task->status == '4' ? 'selected' : '' }}>Completed</option>
-        </select>
+          @if ($tasks->status == '3')
+            <div class="bg-orange-400 text-base rounded-sm text-center px-2">
+              In Progress
+            </div>
+          @endif
+
+            @if ($tasks->status == '4')
+            <div class="bg-green-400 text-base rounded-sm text-center px-2">
+              Completed
+            </div>
+          @endif
         </div>
       </div>
 
@@ -107,9 +112,8 @@
         </div>
 
         <div class="w-8/12 flex flex-col items-start">
-          <img class="max-h-96 object-contain mb-2" src="{{url(Storage::url('photo/'.$task->photo))}}"  alt="">
-          <input value="{{ $task->photo }}" placeholder="photo" type="file" name="photo" id="photo" autocomplete="photo"  class="w-full rounded-lg bg-slate-100 p-2" alt="">
-
+          <img class="max-h-96 object-contain mb-2" src="{{url(Storage::url('photo/'.$tasks->photo))}}"  alt="">
+        
           {{-- @if (auth()->task()->first()->photo != NULL)
              <img src="{{ url(Storage::url(auth()->task()->first()->photo)) }}" alt="photo profile" class="w-20 h-20">
           @else
@@ -119,12 +123,11 @@
 
           <input type="file" accept="image/*" id="choose" name="photo" hidden> --}}
 
-
         </div>
       </div>
 
       <div class="form items-start">
-        <div class="w-4/12 flex flex-row items-center">
+        <div class="w-4/12 flex flex-row items-center self-start">
           <svg xmlns="http://www.w3.org/2000/svg" class="icon-popup" fill="none" viewBox="0 0 24 24"
             stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h7" />
@@ -132,17 +135,30 @@
           <h1 class="text-lg font-medium text-black">Deskripsi</h1>
         </div>
         <div class="w-8/12 flex">
-          <textarea name="description" id="description" autocomplete="description" class="w-full rounded-lg bg-slate-100 p-2"  cols="30" rows="5" >{{ $task->description }}</textarea>
+          <div class="w-full rounded-lg bg-slate-100 p-2"  cols="30" rows="5" >{{ $tasks->description }}</div>
         </div>
       </div>
 
-      <div class="flex justify-end gap-3">
-        <a type="button" href="{{ route('task.index') }}" class="rounded-xl bg-red-400 px-4 py-2 font-medium hover:bg-red-500">Cancel</a>
-        {{-- <button class="rounded-xl bg-yellow-400 px-4 py-2 font-medium hover:bg-yellow-500">Edit</button> --}}
-        <button type="submit" class="rounded-xl bg-green-400 px-4 py-2 font-medium hover:bg-green-500" >Save Changes</button>
+      <div class="flex justify-end gap-3">    
+    
+      <form action="{{ route('task.destroy', $tasks->id) }}" method="POST">
+        @csrf {{ method_field('DELETE') }}
+        
+          <button class="text-white bg-red-500 hover:bg-red-700 rounded-md px-4 py-2" >Delete</button>
+      </form>
+
+      {{-- <form action="{{ route('all-event.destroy', $item->id) }}" class="d-inline" method="POST">
+          @csrf {{ method_field('DELETE') }}
+          <button class="btn btn-danger">
+              <i class="fa fa-trash"></i>
+          </button>
+      </form> --}}
+
+  
+       
+        <a href="{{ route('task.edit', $tasks['id']) }}" type="button" class="text-white bg-primer_3 hover:bg-primer_3_hover rounded-md px-4 py-2" >Edit Task</a>
       </div>
 
-  </form>
 </div>
 
 

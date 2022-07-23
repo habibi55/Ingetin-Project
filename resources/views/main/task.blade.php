@@ -7,7 +7,7 @@
 
   <!-- Unscheduled -->
   <div class="section-task">
-    <div class="flex items-center rounded-t-lg bg-blue-400 p-1"></div>
+    <div class="flex items-center rounded-t-lg bg-purple-400 p-1"></div>
     <div class="flex justify-between items-center px-4 py-1">
       <h1 class="font-semibold my-2">Unscheduled</h1>
       <a class="-mr-1 p-1 hover:bg-neutral-200 rounded transition duration-300" href="{{ route('task.create') }}">
@@ -23,9 +23,9 @@
 
       @forelse ($tasks as $key => $task)
         @if ($task->status == '1')
-        <a href="{{ route('task.edit', $task['id']) }}" class="flex flex-col items-start rounded-lg bg-white shadow-md cursor-pointer">
-          <div class="flex flex-col items-start px-3 py-2">
-            <h1 class="font-semibold text-base mb-1 text-left">{{ $task->title ?? '' }} </h1>
+        <a href="{{ route('task-detail', $task->id) }}" class="flex flex-col items-start rounded-lg bg-white shadow-md cursor-pointer">
+          <div class="w-full flex flex-col items-start px-3 py-2">
+            <h1 class="font-semibold text-base mb-1">{{ $task->title ?? '' }} </h1>
             {{-- <!-- Label -->
             <div class="flex flex-row items-center flex-wrap gap-2 py-1">
               <div id="kategori" class="text-xs px-2 bg-purple-300 rounded-sm text-center">
@@ -151,7 +151,7 @@
 
       @forelse ($tasks as $key => $task)
         @if ($task->status == '2')
-        <a href="{{ route('task.edit', $task['id']) }}" class="flex flex-col items-start rounded-lg bg-white shadow-md cursor-pointer">
+        <a href="{{ route('task-detail', $task->id) }}" class="flex flex-col items-start rounded-lg bg-white shadow-md cursor-pointer">
           <div class="flex flex-col items-start px-3 py-2">
             <h1 class="font-semibold text-base mb-1 text-left">{{ $task->title ?? '' }} </h1>
             {{-- <!-- Label -->
@@ -262,7 +262,7 @@
   
   <!-- START:In Progress -->
   <div class="section-task">
-    <div class="flex items-center rounded-t-lg bg-orange-400  p-1">
+    <div class="flex items-center rounded-t-lg bg-orange-400 p-1">
     </div>
     <div class="flex justify-between items-center px-4 py-1">
       <h1 class="font-semibold my-2">In Progress</h1>
@@ -279,7 +279,7 @@
 
       @forelse ($tasks as $key => $task)
         @if ($task->status == '3')
-        <a href="{{ route('task.edit', $task['id']) }}" class="flex flex-col items-start rounded-lg bg-white shadow-md cursor-pointer">
+        <a href="{{ route('task-detail', $task->id) }}" class="flex flex-col items-start rounded-lg bg-white shadow-md cursor-pointer">
           <div class="flex flex-col items-start px-3 py-2">
             <h1 class="font-semibold text-base mb-1 text-left">{{ $task->title ?? '' }} </h1>
 
@@ -326,7 +326,7 @@
     <div class="flex flex-col flex-nowrap px-3 pb-3 gap-3">
       @forelse ($tasks as $key => $task)
         @if ($task->status == '4')
-        <a href="{{ route('task.edit', $task['id']) }}" class="flex flex-col items-start rounded-lg bg-white shadow-md cursor-pointer">
+        <a href="{{ route('task-detail', $task->id) }}" class="flex flex-col items-start rounded-lg bg-white shadow-md cursor-pointer">
           <div class="flex flex-col items-start px-3 py-2">
             <h1 class="font-semibold text-base mb-1 text-left">{{ $task->title ?? '' }} </h1>
 

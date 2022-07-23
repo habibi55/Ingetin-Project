@@ -13,9 +13,6 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Support\Str;
-
-use App\Models\Event;
-
 use File;
 
 class MainController extends Controller
@@ -47,10 +44,6 @@ class MainController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -75,17 +68,15 @@ class MainController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
-    }
 
     //Custom
-    public function index()
+    public function index(Request $request)
     {
+
         $tasks = Task::where('users_id', Auth::user()->id)->orderBy('created_at', 'desc')->get();
 
-        return view('main.task', compact('tasks'));
+
+        return view('main.task', ['tasks' => $tasks]);
     }
 
     public function create()
@@ -93,7 +84,7 @@ class MainController extends Controller
         return view('main.create-task');
     }
 
-    public function store(StoreTask $request)
+    public function store(Request $request)
     {
         $this->validate($request, [
             'photo' => 'required|mimes:jpeg,png,jpg',
@@ -127,7 +118,7 @@ class MainController extends Controller
         return view('main.edit-task', compact('task'));
     }
 
-    public function update(UpdateTask $request, $id)
+    public function update(Request $request, $id)
     {
         $task = Task::find($id);
 
@@ -153,6 +144,18 @@ class MainController extends Controller
         $task->description = $request['description'];
         $task->status = $request['status'];
         $task->update();
+
+        return redirect()->route('task.index');
+    }
+
+    public function destroy($id)
+    {
+        $file = Task::find($id);
+        File::delete('storage/poster/' . $file->poster);
+        $file->delete();
+
+        // $task = Task::findOrFail($id);
+        // $task->delete();
 
         return redirect()->route('task.index');
     }
