@@ -90,7 +90,7 @@ class ProfileController extends Controller
     {
         $detail = User::find($id);
 
-        return view('main.edit-profile', compact('detail'));
+        return view('main.profile-edit', compact('detail'));
     }
 
     public function update(Request $request, $id)

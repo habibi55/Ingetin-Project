@@ -81,7 +81,7 @@ class MainController extends Controller
 
     public function create()
     {
-        return view('main.create-task');
+        return view('main.task-create');
     }
 
     public function store(Request $request)
@@ -115,7 +115,7 @@ class MainController extends Controller
     {
         $task = Task::find($id);
 
-        return view('main.edit-task', compact('task'));
+        return view('main.task-edit', compact('task'));
     }
 
     public function update(Request $request, $id)

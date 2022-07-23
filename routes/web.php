@@ -38,7 +38,7 @@ Route::get('task', [LandingController::class, 'task'])->middleware('auth')->name
 Route::resource('task', MainController::class)->middleware(['auth']);
 
 Route::get('task-detail/{id}', [DetailController::class, 'index'])->name('task-detail');
-// Route::resource('task-detail', DetailController::class);
+
 
 // Edit Profile
 Route::resource('profile', ProfileController::class)->middleware(['auth']);

@@ -20,7 +20,7 @@ return new class extends Migration
             $table->integer('status')->nullable();
             $table->longText('photo')->nullable();
             $table->longText('description')->nullable();
-            $table->softDeletes();
+            // $table->softDeletes();
             $table->timestamps();
         });
     }

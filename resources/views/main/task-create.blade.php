@@ -135,9 +135,8 @@
       </div>
 
       <div class="flex justify-end gap-3">
-        <a type="button" href="{{ route('task.index') }} " class="rounded-xl bg-red-400 px-4 py-2 font-medium hover:bg-red-500">Cancel</a>
-        {{-- <button class="rounded-xl bg-yellow-400 px-4 py-2 font-medium hover:bg-yellow-500">Edit</button> --}}
-        <button type="submit" class="rounded-xl bg-green-400 px-4 py-2 font-medium hover:bg-green-500" >Submit</button>
+        <a type="button" href="{{ route('task.index') }} " class="rounded-md bg-red-400 px-4 py-2 font-medium hover:bg-red-500">Cancel</a>
+        <button type="submit" class="text-white rounded-md bg-primer_3 px-4 py-2 font-medium hover:bg-primer_3_hover" >Submit</button>
       </div>
 
   </form>

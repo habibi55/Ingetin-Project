@@ -2,20 +2,21 @@
 
 @section('content')
 
-<!-- Pembagian Task (FLEX)-->
-<main class="bg-white flex gap-4 pb-14 px-6 pt-24 justify-between">
+<div class="flex pt-20 justify-start">
+  <a href="{{ route('task.create') }}" class="mx-6 text-white  bg-teal-500 hover:bg-teal-400 rounded-md px-4 py-2 cursor-pointer">
+    Create Task
+  </a>
+</div>
 
+
+<!-- Pembagian Task (FLEX)-->
+<main class="bg-white flex gap-4 pb-14 px-6 pt-3 justify-between">
+  
   <!-- Unscheduled -->
   <div class="section-task">
     <div class="flex items-center rounded-t-lg bg-purple-400 p-1"></div>
     <div class="flex justify-between items-center px-4 py-1">
-      <h1 class="font-semibold my-2">Unscheduled</h1>
-      <a class="-mr-1 p-1 hover:bg-neutral-200 rounded transition duration-300" href="{{ route('task.create') }}">
-        <svg class="h-6 w-6 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-          stroke-linecap="round" stroke-linejoin="round">
-          <line x1="12" y1="5" x2="12" y2="19" />
-          <line x1="5" y1="12" x2="19" y2="12" /></svg>
-      </a>
+      <h1 class="font-semibold my-2">Unscheduled</h1>   
     </div>
 
     <!-- Card Task -->
@@ -131,19 +132,13 @@
   
   </div>
   
-
   <!-- Not Started -->
   <div class="section-task">
     <div class="flex items-center rounded-t-lg bg-red-400  p-1">
     </div>
     <div class="flex justify-between items-center px-4 py-1">
       <h1 class="font-semibold my-2">Not Started</h1>
-      <button class="-mr-1 p-1 hover:bg-neutral-200 rounded transition duration-300">
-        <svg class="h-6 w-6 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-          stroke-linecap="round" stroke-linejoin="round">
-          <line x1="12" y1="5" x2="12" y2="19" />
-          <line x1="5" y1="12" x2="19" y2="12" /></svg>
-      </button>
+      <button class="-mr-1 p-1 hover:bg-neutral-200 rounded transition duration-300">     </button>
     </div>
 
     <!-- START:Card Task -->
@@ -257,21 +252,14 @@
     <!-- END:Card Task -->
 
   </div>
-  <!-- END:Not Started -->
-
   
-  <!-- START:In Progress -->
+  <!-- In Progress -->
   <div class="section-task">
     <div class="flex items-center rounded-t-lg bg-orange-400 p-1">
     </div>
     <div class="flex justify-between items-center px-4 py-1">
       <h1 class="font-semibold my-2">In Progress</h1>
-      <button class="-mr-1 p-1 hover:bg-neutral-200 rounded transition duration-300">
-        <svg class="h-6 w-6 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-          stroke-linecap="round" stroke-linejoin="round">
-          <line x1="12" y1="5" x2="12" y2="19" />
-          <line x1="5" y1="12" x2="19" y2="12" /></svg>
-      </button>
+      <button class="-mr-1 p-1 hover:bg-neutral-200 rounded transition duration-300">     </button>
     </div>
 
     <!-- START:Card Task -->
@@ -302,10 +290,7 @@
     <!-- END:Card Task -->
   </div>
 
-  <!-- END:In Progress -->
-
-
-  <!-- START:COMPLETED -->
+  <!-- COMPLETED -->
   <div class="section-task">
 
     <!-- Garis Ijo -->
@@ -314,12 +299,7 @@
 
     <div class="flex justify-between items-center px-4 py-1">
       <h1 class="font-semibold my-2">Completed</h1>
-      <button class="-mr-1 p-1 hover:bg-neutral-200 rounded transition duration-300">
-        <svg class="h-6 w-6 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-          stroke-linecap="round" stroke-linejoin="round">
-          <line x1="12" y1="5" x2="12" y2="19" />
-          <line x1="5" y1="12" x2="19" y2="12" /></svg>
-      </button>
+      <button class="-mr-1 p-1 hover:bg-neutral-200 rounded transition duration-300">     </button>
     </div>
 
    <!-- START:Card Task -->
@@ -348,9 +328,8 @@
     <!-- END:Card Task -->
 
   </div>
-  <!-- END:Complete -->
 
 </main>
-<!-- END:Pembagian Task -->
+
 
 @endsection
