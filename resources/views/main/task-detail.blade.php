@@ -101,6 +101,8 @@
         </div>
       </div> --}}
 
+      
+
       <div class="form">
         <div class="w-4/12 flex flex-row items-center self-start">
           <svg xmlns="http://www.w3.org/2000/svg" class="icon-popup" fill="none" viewBox="0 0 24 24"
@@ -135,7 +137,7 @@
           <h1 class="text-lg font-medium text-black">Deskripsi</h1>
         </div>
         <div class="w-8/12 flex">
-          <div class="w-full rounded-lg bg-slate-100 p-2"  cols="30" rows="5" >{{ $tasks->description }}</div>
+          <div class="w-full rounded-lg bg-slate-100 p-2"  cols="30" rows="5" >{!! $tasks->description !!}</div>
         </div>
       </div>
 

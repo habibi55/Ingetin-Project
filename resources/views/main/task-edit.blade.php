@@ -132,7 +132,7 @@
           <h1 class="text-lg font-medium text-black">Deskripsi</h1>
         </div>
         <div class="w-8/12 flex">
-          <textarea name="description" id="description" autocomplete="description" class="w-full rounded-lg bg-slate-100 p-2"  cols="30" rows="5" >{{ $task->description }}</textarea>
+          <textarea name="description" id="editor" autocomplete="description" class="w-full rounded-lg bg-slate-100 p-2"  cols="30" rows="5" >{{ $task->description }}</textarea>
         </div>
       </div>
 
