@@ -102,6 +102,8 @@ class MainController extends Controller
         $tasks = Task::create([
             'title' => $request->get('title'),
             'status' => $request->get('status'),
+            'deadline' => $request->get('deadline'),
+            'link' => $request->get('link'),
             'description' => $request->get('description'),
             'photo' => $filenameSimpan,
             'users_id' => Auth::id(),
@@ -141,6 +143,8 @@ class MainController extends Controller
 
 
         $task->title = $request['title'];
+        $task->deadline = $request['deadline'];
+        $task->link = $request['link'];
         $task->description = $request['description'];
         $task->status = $request['status'];
         $task->update();

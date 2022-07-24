@@ -36,17 +36,13 @@
         </div>
 
         <div class="flex w-8/12 justify-start">
-          {{-- <div class="bg-yellow-300 text-base rounded-sm text-center px-2">
-            In Progress
-          </div> --}}
-
-        <select id="status" name="status" autocomplete="status" class="block w-full px-3 py-3 pr-10 mt-1 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required autofocus>
-            <option>Pilih Status</option>
-            <option value="1">Unscheduled</option>
-            <option value="2">Not Started</option>
-            <option value="3">In Progress</option>
-            <option value="4">Completed</option>
-        </select>
+          <select id="status" name="status" autocomplete="status" class="block w-full px-3 py-3 pr-10 mt-1 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required autofocus>
+              <option>Pilih Status</option>
+              <option value="1">Unscheduled</option>
+              <option value="2">Not Started</option>
+              <option value="3">In Progress</option>
+              <option value="4">Completed</option>
+          </select>
         </div>
       </div>
 
@@ -69,7 +65,7 @@
         </div>
       </div> --}}
 
-      {{-- <div class="form">
+      <div class="form">
         <div class="w-4/12 flex flex-row items-center">
           <svg xmlns="http://www.w3.org/2000/svg" class="icon-popup" fill="none" viewBox="0 0 24 24"
             stroke="currentColor" stroke-width="2">
@@ -78,12 +74,12 @@
           <h1 class="text-lg font-medium text-black">Deadline</h1>
         </div>
         <div class="w-8/12 flex">
-          <input class="w-full rounded-lg bg-slate-100 p-2" type="datetime-local" placeholder="Select Date" name=""
-            id="">
+          <input class="w-full rounded-lg bg-slate-100 p-2" type="datetime-local" placeholder="Select Date" name="deadline"
+            required>
         </div>
-      </div> --}}
+      </div>
 
-      {{-- <div class="form">
+      <div class="form">
         <div class="w-4/12 flex flex-row items-center">
           <svg xmlns="http://www.w3.org/2000/svg" class="icon-popup" fill="none" viewBox="0 0 24 24"
             stroke="currentColor" stroke-width="2">
@@ -94,9 +90,9 @@
         </div>
 
         <div class="w-8/12 flex">
-          <input class="w-full rounded-lg bg-slate-100 p-2" type="url" name="" id="">
+          <input class="w-full rounded-lg bg-slate-100 p-2" type="text" name="link" id="link" value="{{ old('link') }}">
         </div>
-      </div> --}}
+      </div>
 
       <div class="form">
         <div class="w-4/12 flex flex-row items-center">

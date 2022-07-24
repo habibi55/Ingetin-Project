@@ -67,7 +67,7 @@
         </div>
       </div> --}}
 
-      {{-- <div class="form">
+      <div class="form">
         <div class="w-4/12 flex flex-row items-center">
           <svg xmlns="http://www.w3.org/2000/svg" class="icon-popup" fill="none" viewBox="0 0 24 24"
             stroke="currentColor" stroke-width="2">
@@ -76,12 +76,12 @@
           <h1 class="text-lg font-medium text-black">Deadline</h1>
         </div>
         <div class="w-8/12 flex">
-          <input class="w-full rounded-lg bg-slate-100 p-2" type="datetime-local" placeholder="Select Date" name=""
-            id="">
+          <input class="w-full rounded-lg bg-slate-100 p-2" type="datetime-local" placeholder="Select Date" name="deadline"
+            value="{{ $task->deadline }}">
         </div>
-      </div> --}}
+      </div>
 
-      {{-- <div class="form">
+      <div class="form">
         <div class="w-4/12 flex flex-row items-center">
           <svg xmlns="http://www.w3.org/2000/svg" class="icon-popup" fill="none" viewBox="0 0 24 24"
             stroke="currentColor" stroke-width="2">
@@ -92,9 +92,9 @@
         </div>
 
         <div class="w-8/12 flex">
-          <input class="w-full rounded-lg bg-slate-100 p-2" type="url" name="" id="">
+          <input class="w-full rounded-lg bg-slate-100 p-2" type="text" name="link" id="link" value="{{ $task->link }}">
         </div>
-      </div> --}}
+      </div>
 
       <div class="form">
         <div class="w-4/12 flex flex-row items-center self-start">

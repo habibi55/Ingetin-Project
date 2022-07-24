@@ -23,6 +23,8 @@ class Task extends Model
         'users_id',
         'title',
         'status',
+        'deadline',
+        'link',
         'photo',
         'description',
         'updated_at',
