@@ -20,7 +20,7 @@
           <h1 class="text-lg font-medium text-black">Judul</h1>
         </div>
         <div class="flex w-8/12">
-          <input name="title" type="text" autocomplete="title" class="w-full bg-slate-100 rounded-lg p-2" value="{{ old('title') }}"  required>
+          <input name="title" type="text" autocomplete="title" class="w-full bg-slate-100 rounded-lg p-2" value="{{ old('title') }}" required>
         </div>
       </div>
 
@@ -40,7 +40,7 @@
             In Progress
           </div> --}}
 
-        <select id="status" name="status" autocomplete="status" class="block w-full px-3 py-3 pr-10 mt-1 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
+        <select id="status" name="status" autocomplete="status" class="block w-full px-3 py-3 pr-10 mt-1 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required autofocus>
             <option>Pilih Status</option>
             <option value="1">Unscheduled</option>
             <option value="2">Not Started</option>
@@ -107,7 +107,7 @@
           </svg>
           <h1 class="text-lg font-medium text-black">Foto</h1>
         </div>
-        <div class="w-8/12 flex flex-row">
+        <div class="w-8/12 flex flex-col">
           {{-- @if (auth()->task()->first()->photo != NULL)
              <img src="{{ url(Storage::url(auth()->task()->first()->photo)) }}" alt="photo profile" class="w-20 h-20">
           @else
@@ -117,7 +117,8 @@
 
         <input type="file" accept="image/*" id="choose" name="photo" hidden> --}}
 
-          <input type="file" name="photo" id="photo" autocomplete="photo" class="w-full rounded-lg bg-slate-100 p-2"  value="{{ old('photo') }}">
+          <input type="file" name="photo" class="w-full rounded-lg bg-slate-100 p-2 @error('photo') is-invalid @enderror" value="{{ old('photo') }}">          
+          @error('photo') <div class="text-red-600 mt-2">{{ $message }}</div> @enderror
         </div>
       </div>
 
@@ -130,7 +131,7 @@
           <h1 class="text-lg font-medium text-black">Deskripsi</h1>
         </div>
         <div class="w-8/12 flex">
-          <textarea name="description" id="editor" autocomplete="description" class="w-full rounded-lg bg-slate-100 p-2"  cols="30" rows="5" value="{{ old('description') }}"></textarea>
+          <textarea name="description" id="description" class="w-full rounded-lg bg-slate-100 p-2"  cols="30" rows="5" value="{{ old('description') }}"></textarea>
         </div>
       </div>
 
@@ -141,7 +142,5 @@
 
   </form>
 </div>
-
-
 
 @endsection

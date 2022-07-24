@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('users_id')->nullable()->index('fk_task_to_users');
             $table->string('title');
-            $table->integer('status')->nullable();
+            $table->integer('status');
             $table->longText('photo')->nullable();
             $table->longText('description')->nullable();
             // $table->softDeletes();

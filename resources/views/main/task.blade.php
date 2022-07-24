@@ -2,13 +2,16 @@
 
 @section('content')
 
-<div class="flex pt-20 justify-start">
-  <a href="{{ route('task.create') }}" class="mx-6 text-white  bg-teal-500 hover:bg-teal-400 rounded-md px-4 py-2 cursor-pointer">
-    Create Task
+<div class="flex pt-20 justify-start mx-6">
+  <a href="{{ route('task.create') }}" class="flex flex-row hover:opacity-80 items-center">
+    <div class="text-white text-sm font-semibold bg-primer_3 rounded-md px-4 py-2">
+      Create Task
+    </div>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 stroke-white fill-primer_3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
   </a>
 </div>
-
-
 
 <!-- Pembagian Task (FLEX)-->
 <main class="bg-white flex gap-4 pb-14 px-6 pt-3 justify-between">
@@ -115,6 +118,19 @@
               </svg>
             </div> --}}
 
+           <!-- Icon -->
+            @if ($task->description !== NULL)
+            <div class="flex flex-row mt-2 mb-1 gap-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h7" />
+                </svg>
+            </div>
+            @else
+              
+            @endif
+
+        
           </div>      
         </a>
         @else

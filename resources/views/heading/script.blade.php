@@ -113,7 +113,7 @@ function closeModal(modal) {
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
 {{-- Description Editor --}}
-<script src="https://cdn.ckeditor.com/ckeditor5/34.2.0/classic/ckeditor.js"></script>
+{{-- <script src="https://cdn.ckeditor.com/ckeditor5/34.2.0/classic/ckeditor.js"></script>
 
 <script>
   ClassicEditor
@@ -121,4 +121,13 @@ function closeModal(modal) {
       .catch( error => {
           console.error( error );
       } );
-</script>
+</script> --}}
+
+<script src="https://cdn.ckeditor.com/ckeditor5/34.2.0/classic/ckeditor.js"></script>
+  <script>
+      ClassicEditor
+          .create( document.querySelector( '#description' ) )
+          .catch( error => {
+              console.error( error );
+          } );
+  </script>

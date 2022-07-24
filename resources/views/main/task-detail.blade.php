@@ -137,7 +137,11 @@
           <h1 class="text-lg font-medium text-black">Deskripsi</h1>
         </div>
         <div class="w-8/12 flex">
-          <div class="w-full rounded-lg bg-slate-100 p-2"  cols="30" rows="5" >{!! $tasks->description !!}</div>
+          @if ($tasks->description == NULL)
+              <div class="w-full rounded-lg bg-slate-100 p-2"  cols="30" rows="5" >ㅤ</div>
+          @else
+              <div class="w-full rounded-lg bg-slate-100 p-3"  cols="30" rows="5" >{!! $tasks->description !!}</div>
+          @endif
         </div>
       </div>
 
@@ -147,17 +151,7 @@
         @csrf {{ method_field('DELETE') }}
         
           <button class="text-white bg-red-500 hover:bg-red-700 rounded-md px-4 py-2" >Delete</button>
-      </form>
-
-      {{-- <form action="{{ route('all-event.destroy', $item->id) }}" class="d-inline" method="POST">
-          @csrf {{ method_field('DELETE') }}
-          <button class="btn btn-danger">
-              <i class="fa fa-trash"></i>
-          </button>
-      </form> --}}
-
-  
-       
+      </form>     
         <a href="{{ route('task.edit', $tasks['id']) }}" type="button" class="text-white bg-primer_3 hover:bg-primer_3_hover rounded-md px-4 py-2" >Edit Task</a>
       </div>
 
