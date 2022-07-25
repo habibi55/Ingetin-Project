@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Session;
 
 use App\Http\Request\StoreTask;
 use App\Http\Request\UpdateTask;
+use App\Models\Category;
 use App\Models\User;
 use App\Models\Task;
 use Illuminate\Support\Facades\Auth;
@@ -24,27 +25,26 @@ class DetailController extends Controller
     public function index(Request $request, $id)
     {
 
-        $tasks = Task::all()
-            ->where('id', $id)
+        $tasks = Task::where('id', $id)
             ->first();
 
-        $Key = 'blog_' . $tasks->id;
+        // $Key = 'blog_' . $tasks->id;
 
-        if (!Session::has($Key)) {
+        // if (!Session::has($Key)) {
 
-            Session::put($Key, 1);
-        }
+        //     Session::put($Key, 1);
+        // }
 
-        return view('main.task-detail', ['tasks' => $tasks]);
+        // Category
+        // $service = Service::where('id', $id)->first();
+
+        $category = Category::where('task_id', $id)->get();
+
+        return view('main.task-detail', compact('category'), ['tasks' => $tasks]);
     }
 
     public function destroy($id)
     {
-        // $file = Task::find($id);
-        // File::delete('storage/poster/' . $file->poster);
-        // $file->delete();
-
-        // return redirect()->route('task.index');
     }
 
     /**

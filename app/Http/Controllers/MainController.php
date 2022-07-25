@@ -3,12 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
+
+use Illuminate\Support\Facades\Storage;
 
 use App\Http\Request\StoreTask;
 use App\Http\Request\UpdateTask;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Task;
+use App\Models\Category;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 
@@ -72,11 +76,11 @@ class MainController extends Controller
     //Custom
     public function index(Request $request)
     {
-
         $tasks = Task::where('users_id', Auth::user()->id)->orderBy('created_at', 'desc')->get();
+        // return view('main.task', ['tasks' => $tasks]);
 
-
-        return view('main.task', ['tasks' => $tasks]);
+        // $tasks = Task::all();
+        return view('main.task', compact('tasks'));
     }
 
     public function create()
@@ -99,10 +103,22 @@ class MainController extends Controller
             $filenameSimpan = NULL;
         }
 
+
+        // $tasks = $request->all();
+        // $tasks['users_id'] = Auth::user()->id;
+        // $task = Task::create($tasks);
+        // foreach ($tasks['category'] as $key => $value) {
+        //     $category = new Category;
+        //     $category->task_id = $task->id;
+        //     $category->category = $value;
+        //     $category->save();
+        // }
+
         $tasks = Task::create([
             'title' => $request->get('title'),
             'status' => $request->get('status'),
             'deadline' => $request->get('deadline'),
+            'category' => $request->get('category'),
             'link' => $request->get('link'),
             'description' => $request->get('description'),
             'photo' => $filenameSimpan,
@@ -116,8 +132,9 @@ class MainController extends Controller
     public function edit($id)
     {
         $task = Task::find($id);
+        $category = Category::where('task_id', $task['id'])->get();
 
-        return view('main.task-edit', compact('task'));
+        return view('main.task-edit', compact('task', 'category'));
     }
 
     public function update(Request $request, $id)
@@ -141,10 +158,34 @@ class MainController extends Controller
             $filenameSimpan = $task->photo;
         }
 
+        // // Category
+        // $tasks = $request->all();
+
+        // // update to service
+        // $task->update($tasks);
+
+        // // update to category
+        // foreach ($tasks['categorys'] as $key => $value) {
+        //     $category = Category::find($key);
+        //     $category->category = $value;
+        //     $category->save();
+        // }
+
+        // //add new category
+        // if (isset($tasks['category'])) {
+        //     foreach ($tasks['category'] as $key => $value) {
+        //         $category = new Category;
+        //         $category->task_id = $task['id'];
+        //         $category->category = $value;
+        //         $category->save();
+        //     }
+        // }
+
 
         $task->title = $request['title'];
         $task->deadline = $request['deadline'];
         $task->link = $request['link'];
+        $task->category = $request['category'];
         $task->description = $request['description'];
         $task->status = $request['status'];
         $task->update();

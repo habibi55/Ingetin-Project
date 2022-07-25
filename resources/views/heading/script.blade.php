@@ -78,7 +78,7 @@ function closeModal(modal) {
     enableTime: true,
     dateFormat: "Y-m-d H:i",
     altInput: true,
-    altFormat: "F j, Y(h:S K)"
+    altFormat: "F j, Y (h:S K)"
   }
 
   flatpickr("input[type=dateTime-local", config);
@@ -113,16 +113,6 @@ function closeModal(modal) {
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
 {{-- Description Editor --}}
-{{-- <script src="https://cdn.ckeditor.com/ckeditor5/34.2.0/classic/ckeditor.js"></script>
-
-<script>
-  ClassicEditor
-      .create( document.querySelector( '#editor' ) )
-      .catch( error => {
-          console.error( error );
-      } );
-</script> --}}
-
 <script src="https://cdn.ckeditor.com/ckeditor5/34.2.0/classic/ckeditor.js"></script>
   <script>
       ClassicEditor
@@ -131,3 +121,19 @@ function closeModal(modal) {
               console.error( error );
           } );
   </script>
+
+{{-- Nambah Kategori --}}
+<script type="text/javascript">
+    // add row
+    $("#addCategoryCol").click(function() {
+        var html = '';
+        html += '<input type="text" name="category[]" id="category" autocomplete="category" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm">';
+
+        $('#newCategoryCol').append(html);
+    });
+
+    // remove row
+    $(document).on('click', '#removeServicesRow', function() {
+        $(this).closest('#inputFormServicesRow').remove();
+    });
+</script>

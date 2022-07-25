@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('title');
             $table->integer('status');
             $table->datetime('deadline')->nullable();
+            $table->string('category')->nullable();
             $table->string('link')->nullable();
             $table->longText('photo')->nullable();
             $table->longText('description')->nullable();

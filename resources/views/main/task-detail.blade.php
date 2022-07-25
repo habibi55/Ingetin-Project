@@ -53,7 +53,7 @@
         </div>
       </div>
 
-      {{-- <div class="form">
+      <div class="form">
         <div class="w-4/12 flex flex-row items-center">
           <svg xmlns="http://www.w3.org/2000/svg" class="icon-popup" fill="none" viewBox="0 0 24 24"
             stroke="currentColor" stroke-width="2">
@@ -63,14 +63,22 @@
           <h1 class="text-lg font-medium text-black">Kategori</h1>
         </div>
         <div class="flex w-8/12 justify-start gap-3">
-          <div id="kategori" class="px-2 bg-purple-300 rounded-sm text-center">
-            Individu
-          </div>
-          <div id="kategori" class="px-2 bg-blue-300 rounded-sm text-center">
-            Kuliah
-          </div>
+          
+          @if ($tasks->category == NULL)
+        
+              <div class="w-full bg-slate-100 rounded-lg p-2">ㅤ</div>
+          @else
+            <div class="w-full bg-slate-100 rounded-lg p-2"> {{ $tasks->category }} </div>
+          @endif
+
+          {{-- @forelse ($category as $key => $category)
+              <div class="text-xs px-2 bg-purple-300 rounded-sm text-center">{{ $category->category ?? '' }}</div>
+          @empty
+              
+          @endforelse --}}
+          
         </div>
-      </div> --}}
+      </div>
 
       <div class="form">
         <div class="w-4/12 flex flex-row items-center">
@@ -84,7 +92,7 @@
           @if ($tasks->deadline == NULL)
               <div class="w-full rounded-lg bg-slate-100 p-2"  cols="30" rows="5" >ㅤ</div>
           @else
-              <div class="w-full rounded-lg bg-slate-100 p-3"  cols="30" rows="5" >{{ $tasks->deadline }}</div>
+              <div class="w-full rounded-lg bg-slate-100 p-3"  cols="30" rows="5" >{{  date("F j, Y H:i",strtotime($tasks->deadline)) ?? '' }} </div>
           @endif
         </div>
       </div>
@@ -100,16 +108,14 @@
         </div>
 
         <div class="w-8/12 flex">
-          @if ($tasks->deadline == NULL)
+          @if ($tasks->link == NULL)
               <div class="w-full rounded-lg bg-slate-100 p-2"  cols="30" rows="5" >ㅤ</div>
           @else
               <a href="{{ url( $tasks->link )}}" target="_blank" class="w-full rounded-lg bg-slate-100 p-3"  cols="30" rows="5" >{{ $tasks->link }}</a>
           @endif
 
         </div>
-      </div>
-
-      
+      </div>    
 
       <div class="form">
         <div class="w-4/12 flex flex-row items-center self-start">
@@ -123,16 +129,6 @@
 
         <div class="w-8/12 flex flex-col items-start">
           <img class="max-h-96 object-contain mb-2" src="{{url(Storage::url('photo/'.$tasks->photo))}}"  alt="">
-        
-          {{-- @if (auth()->task()->first()->photo != NULL)
-             <img src="{{ url(Storage::url(auth()->task()->first()->photo)) }}" alt="photo profile" class="w-20 h-20">
-          @else
-            
-          @endif
-          <label for="choose" class="px-3 py-2 ml-5 text-sm font-medium leading-4 text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">Choose File</label>
-
-          <input type="file" accept="image/*" id="choose" name="photo" hidden> --}}
-
         </div>
       </div>
 

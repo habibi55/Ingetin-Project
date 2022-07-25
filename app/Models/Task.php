@@ -14,6 +14,7 @@ class Task extends Model
     public $table = 'task';
 
     protected $dates = [
+        'deadline',
         'updated_at',
         'created_at',
         'deleted_at',
@@ -24,6 +25,7 @@ class Task extends Model
         'title',
         'status',
         'deadline',
+        'category',
         'link',
         'photo',
         'description',

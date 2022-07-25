@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('category', function (Blueprint $table) {
             $table->id();
             $table->foreignId('task_id')->nullable()->index('fk_category_to_task');
-            $table->string('category');
-            $table->softDeletes();
+            $table->string('category')->nullable();
+            // $table->softDeletes();
             $table->timestamps();
         });
     }
