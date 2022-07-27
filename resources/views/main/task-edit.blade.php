@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="flex justify-center md:px-24 lg:px-96 pt-28">
+<div class="flex justify-center md:px-24 lg:px-96 pt-28 mb-20">
     <form class="w-full" action="{{ route('task.update', [$task->id]) }}" method="POST" enctype="multipart/form-data">
 
       @method('PUT')

@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="flex flex-col justify-center md:px-24 lg:px-96 pt-28">
+<div class="flex flex-col justify-center md:px-24 lg:px-96 pt-28 mb-20">
       <h1 class="font-semibold text-2xl mb-4">Detail Task</h1>
 
       <div class="form">
@@ -70,12 +70,6 @@
           @else
             <div class="w-full bg-slate-100 rounded-lg p-2"> {{ $tasks->category }} </div>
           @endif
-
-          {{-- @forelse ($category as $key => $category)
-              <div class="text-xs px-2 bg-purple-300 rounded-sm text-center">{{ $category->category ?? '' }}</div>
-          @empty
-              
-          @endforelse --}}
           
         </div>
       </div>

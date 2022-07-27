@@ -8,7 +8,7 @@
       <form class="w-full" action="{{ route('profile.update', $detail->id)}}" method="POST">
         @method('PUT')
         @csrf
-        <h1 class="text-3xl font-bold self-start">My Profile</h1>
+        <h1 class="text-3xl font-bold self-start">Edit Profile</h1>
 
         <!-- Edit Photo -->
         {{-- <input type="file" accept="image/*" id="choose" name="photo" hidden required>

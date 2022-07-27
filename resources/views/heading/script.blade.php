@@ -75,10 +75,12 @@ function closeModal(modal) {
 
 <script>
   config = {
+    minDate: "today",
     enableTime: true,
     dateFormat: "Y-m-d H:i",
     altInput: true,
     altFormat: "F j, Y (h:S K)"
+    
   }
 
   flatpickr("input[type=dateTime-local", config);

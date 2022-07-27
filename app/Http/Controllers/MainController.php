@@ -90,8 +90,23 @@ class MainController extends Controller
 
     public function store(Request $request)
     {
+
+
+        // Calculate Time
+        $now = Carbon::now();
+        echo $now;                               // 2022-05-03 11:44:11
+        echo "\n";
+
+        $tasks = new Task;
+
+        $deadline_time = $request->get('deadline');
+
+        $tasks->before_deadline = Date('y-m-d', strtotime('+3 days'));
+        $tasks->before_deadline = Carbon::now();
+
+
         $this->validate($request, [
-            'photo' => 'required|mimes:jpeg,png,jpg',
+            'photo' => 'mimes:jpeg,png,jpg',
         ]);
         if ($request->hasFile('photo')) {
             $filenameWithExt = Str::slug($request->get('title'));
@@ -99,20 +114,7 @@ class MainController extends Controller
             $extension = $request->file('photo')->getClientOriginalExtension();
             $filenameSimpan = $filename . '_' . time() . '.' . $extension;
             $path = $request->file('photo')->move('storage/photo', $filenameSimpan);
-        } else {
-            $filenameSimpan = NULL;
         }
-
-
-        // $tasks = $request->all();
-        // $tasks['users_id'] = Auth::user()->id;
-        // $task = Task::create($tasks);
-        // foreach ($tasks['category'] as $key => $value) {
-        //     $category = new Category;
-        //     $category->task_id = $task->id;
-        //     $category->category = $value;
-        //     $category->save();
-        // }
 
         $tasks = Task::create([
             'title' => $request->get('title'),
@@ -121,7 +123,7 @@ class MainController extends Controller
             'category' => $request->get('category'),
             'link' => $request->get('link'),
             'description' => $request->get('description'),
-            'photo' => $filenameSimpan,
+            // 'photo' => $filenameSimpan,
             'users_id' => Auth::id(),
         ]);
 

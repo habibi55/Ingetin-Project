@@ -4,7 +4,7 @@
 
 @layer components {
   .section-task {
-    @apply shrink-0 h-full w-110 bg-gray-100 rounded-lg;
+    @apply shrink-0 h-full w-96 bg-gray-100 rounded-lg;
   }
 
   /* Pop Up Task */

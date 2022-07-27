@@ -25,6 +25,7 @@ class Task extends Model
         'title',
         'status',
         'deadline',
+        'notif_deadline',
         'category',
         'link',
         'photo',
