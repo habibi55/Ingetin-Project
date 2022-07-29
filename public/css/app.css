@@ -554,7 +554,11 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
-/* Pop Up Task */
+@media (min-width: 1536px) {
+  .section-task {
+    width : 28rem;
+}
+}
 .form {
   margin-bottom: 1.5rem;
   display: flex;
@@ -899,11 +903,11 @@ video {
 .border-t {
   border-top-width: 1px;
 }
-.border-t-2 {
-  border-top-width: 2px;
-}
 .border-b-2 {
   border-bottom-width: 2px;
+}
+.border-t-2 {
+  border-top-width: 2px;
 }
 .border-gray-200 {
   --tw-border-opacity: 1;
@@ -1034,9 +1038,9 @@ video {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
 }
-.py-20 {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 .px-16 {
   padding-left: 4rem;
@@ -1049,10 +1053,6 @@ video {
 .py-1 {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
-}
-.py-10 {
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
 }
 .pt-8 {
   padding-top: 2rem;
@@ -1672,5 +1672,17 @@ video {
 
   .lg\:pt-0 {
     padding-top: 0px;
+  }
+}
+
+
+@media (min-width: 1536px) {
+
+  .\32xl\:gap-1 {
+    gap: 0.25rem;
+  }
+
+  .\32xl\:gap-4 {
+    gap: 1rem;
   }
 }

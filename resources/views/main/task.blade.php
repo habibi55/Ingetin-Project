@@ -15,7 +15,7 @@
 </div>
 
 <!-- Pembagian Task (FLEX)-->
-<main class="bg-white flex gap-4 pb-14 px-6 pt-3 justify-between">
+<main class="bg-white flex gap-2 2xl:gap-4 pb-14 px-6 pt-3 justify-between">
   
   <!-- UNSCHEDULED -->
   <div class="section-task">
@@ -42,7 +42,7 @@
             <!-- Label -->
             @if ($task->category !== NULL)
               <div class="flex flex-row items-center flex-wrap gap-2 py-1">
-                <div class="text-xs px-2 bg-purple-300 rounded-sm text-center">
+                <div class="text-xs px-2 bg-primer text-white rounded-sm text-center">
                   {{ $task->category ?? '' }}
                 </div>
               </div>

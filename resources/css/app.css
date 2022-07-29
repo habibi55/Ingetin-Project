@@ -4,10 +4,9 @@
 
 @layer components {
   .section-task {
-    @apply shrink-0 h-full w-96 bg-gray-100 rounded-lg;
+    @apply shrink-0 h-full w-96 2xl:w-110 bg-gray-100 rounded-lg;
   }
 
-  /* Pop Up Task */
   .form {
     @apply flex flex-row items-center mb-6;
   }

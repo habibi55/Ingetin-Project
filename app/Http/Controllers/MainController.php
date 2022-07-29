@@ -92,10 +92,10 @@ class MainController extends Controller
     {
 
 
-        if ($request->has('deadline')) {
-            $dt = Carbon::parse($request->get('deadline'));
-            $gg = $dt->subDay();
-        }
+        // if ($request->has('deadline')) {
+        //     $dt = Carbon::parse($request->get('deadline'));
+        //     $gg = $dt->subDay();
+        // }
 
         // $tasks = new Task;
 
@@ -110,6 +110,8 @@ class MainController extends Controller
             $extension = $request->file('photo')->getClientOriginalExtension();
             $filenameSimpan = $filename . '_' . time() . '.' . $extension;
             $path = $request->file('photo')->move('storage/photo', $filenameSimpan);
+        } else {
+            $filenameSimpan = NULL;
         }
 
         $tasks = Task::create([
@@ -118,6 +120,7 @@ class MainController extends Controller
             'deadline' => $request->get('deadline'),
             'notif_deadline' => $request->get('notif_deadline'),
             'category' => $request->get('category'),
+            'photo' => $filenameSimpan,
             'link' => $request->get('link'),
             'description' => $request->get('description'),
             'users_id' => Auth::id(),

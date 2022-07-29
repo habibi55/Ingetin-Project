@@ -103,7 +103,7 @@
         </div>
         <div class="w-8/12 flex flex-col">
 
-          <input id="photo" type="file" name="photo" class="w-full rounded-lg bg-slate-100 p-2 @error('photo') is-invalid @enderror" value="{{ old('photo') }}" >          
+          <input id="photo" type="file" name="photo" class="w-full rounded-lg bg-slate-100 p-2  @error('photo') is-invalid @enderror" autocomplete="photo" value="{{ old('photo') }}" >          
           @error('photo') <div class="text-red-600 mt-2">{{ $message }}</div> @enderror
         </div>
       </div>
