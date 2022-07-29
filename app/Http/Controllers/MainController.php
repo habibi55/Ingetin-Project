@@ -92,17 +92,13 @@ class MainController extends Controller
     {
 
 
-        // Calculate Time
-        $now = Carbon::now();
-        echo $now;                               // 2022-05-03 11:44:11
-        echo "\n";
+        if ($request->has('deadline')) {
+            $dt = Carbon::parse($request->get('deadline'));
+            $gg = $dt->subDay();
+        }
 
-        $tasks = new Task;
+        // $tasks = new Task;
 
-        $deadline_time = $request->get('deadline');
-
-        $tasks->before_deadline = Date('y-m-d', strtotime('+3 days'));
-        $tasks->before_deadline = Carbon::now();
 
 
         $this->validate($request, [
@@ -120,10 +116,10 @@ class MainController extends Controller
             'title' => $request->get('title'),
             'status' => $request->get('status'),
             'deadline' => $request->get('deadline'),
+            'notif_deadline' => $request->get('notif_deadline'),
             'category' => $request->get('category'),
             'link' => $request->get('link'),
             'description' => $request->get('description'),
-            // 'photo' => $filenameSimpan,
             'users_id' => Auth::id(),
         ]);
 

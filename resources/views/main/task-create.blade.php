@@ -71,8 +71,9 @@
           <h1 class="text-lg font-medium text-black">Deadline</h1>
         </div>
         <div class="w-8/12 flex">
-          <input class="w-full rounded-lg bg-slate-100 p-2" type="datetime-local" placeholder="Select Date" name="deadline"
+          <input class="w-full rounded-lg bg-slate-100 p-2" type="datetime-local" placeholder="Select Date" name="deadline" value="{{ old('deadline') }}"
             >
+            
         </div>
       </div>
 
@@ -116,7 +117,7 @@
           <h1 class="text-lg font-medium text-black">Deskripsi</h1>
         </div>
         <div class="w-8/12 flex">
-          <textarea name="description" id="description" class="w-full rounded-lg bg-slate-100 p-2"  cols="30" rows="5" value="{{ old('description') }}"></textarea>
+          <textarea name="description" id="description" class="w-full rounded-lg bg-slate-100 p-2"  cols="30" rows="5" value="{{ old('description') }}"    ></textarea>
         </div>
       </div>
 

@@ -15,24 +15,29 @@
 </div>
 
 <!-- Pembagian Task (FLEX)-->
-<main class="bg-white flex gap-4 pb-14 px-6 pt-3 justify-center">
+<main class="bg-white flex gap-4 pb-14 px-6 pt-3 justify-between">
   
   <!-- UNSCHEDULED -->
   <div class="section-task">
     <div class="flex items-center rounded-t-lg bg-purple-400 p-1"></div>
       <div class="flex justify-between items-center px-4 py-1">
-      <h1 class="font-semibold my-2">Unscheduled</h1>   
+      <h1 class="font-semibold my-2">Unscheduled</h1>  
+      
     </div>
 
     <!-- Card Task -->
     <div class="flex flex-col flex-nowrap px-3 pb-3 gap-3">
-        
+          {{-- <div>{{ $task->before_deadline2 }}</div> --}}
 
       @foreach ($tasks as $task)
         @if ($task->status == '1')
         <a href="{{ route('task-detail', $task->id) }}" class="flex flex-col items-start rounded-lg bg-white shadow-md cursor-pointer">
           <div class="w-full flex flex-col items-start px-3 py-2">
             <h1 class="font-semibold text-base mb-1">{{ $task->title ?? '' }} </h1>
+            <div>{{ \Carbon\Carbon::parse( $task->deadline )->subDay() }}</div>
+            <div>{{ \Carbon\Carbon::parse( $task->deadline )->subDay()->toDayDateTimeString() }}</div>
+            <div>{{ $task->before_deadline2 }}</div>
+              
 
             <!-- Label -->
             @if ($task->category !== NULL)

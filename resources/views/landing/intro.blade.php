@@ -30,8 +30,8 @@
     </nav>
   </header>
 
-  <main class="flex lg:flex-row py-20">
-    <div class="flex flex-col-reverse lg:flex-row py-20">
+  <main class="flex flex-col">
+    <div class="flex flex-col-reverse lg:flex-row py-10 border-b-2">
       <div class="flex flex-col w-1/2 justify-center">
         <h1 class="leading-snug font-semibold text-4xl mb-4">Ingetin remember every task <br> that ur built</h1>
         <p class="text-lg mb-10">Manage schedule and reach new productivity peaks <br> Private workspace for every
@@ -276,12 +276,12 @@
     </div>
 
 
-    <div class="flex flex-col">
-      <div class="">
+    <div class="flex flex-col items-center py-10">
+      <div class="font-medium text-2xl">
         It’s more than work. It’s a way of working together.
       </div>
 
-      <div class="">
+      <div class="text-center py-4">
         Start with a Trello board, lists, and cards. Customize and expand with more features as your teamwork grows. Manage projects, organize tasks, and build team spirit—all in one place.
       </div>
     </div> 
@@ -290,24 +290,24 @@
 
 
 
-  <footer class="flex flex-col border-t-2 justify-center ">
+  <footer class="flex flex-col justify-center ">
     <div class="flex justify-between">
       <div class="flex items-center">
         <svg class="h-10 w-10" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="500" zoomAndPan="magnify" viewBox="0 0 375 374.999991" height="500" preserveAspectRatio="xMidYMid meet" version="1.0"><defs><clipPath id="id1"><path d="M 109.035156 32.359375 L 342.859375 32.359375 L 342.859375 266 L 109.035156 266 Z M 109.035156 32.359375 " clip-rule="nonzero"/></clipPath><clipPath id="id2"><path d="M 32.359375 109.035156 L 266 109.035156 L 266 342.859375 L 32.359375 342.859375 Z M 32.359375 109.035156 " clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#id1)"><path fill="#0e7490" d="M 109.496094 32.363281 L 109.496094 93.015625 L 146.953125 93.015625 L 146.953125 69.816406 L 305.402344 69.816406 L 305.402344 228.269531 L 146.953125 228.269531 L 146.953125 163.433594 L 109.496094 163.433594 L 109.496094 265.722656 L 342.855469 265.722656 L 342.855469 32.363281 L 109.496094 32.363281 " fill-opacity="1" fill-rule="nonzero"/></g><g clip-path="url(#id2)"><path fill="rgb(0%, 0%, 0%)" d="M 228.265625 305.402344 L 69.816406 305.402344 L 69.816406 146.953125 L 228.265625 146.953125 L 228.265625 211.785156 L 265.722656 211.785156 L 265.71875 109.5 L 32.359375 109.5 L 32.359375 342.859375 L 265.722656 342.859375 L 265.722656 282.203125 L 228.265625 282.203125 L 228.265625 305.402344 " fill-opacity="1" fill-rule="nonzero"/></g></svg>
         <h2 class="pl-1 text-2xl font-bold ">Ingetin</h2>
       </div>
-      <div class="font-semibold">
+      <div class="font-medium">
         About Ingetin
       </div>
-      <div class="font-semibold">
+      <div class="font-medium">
         Notion For
       </div>
-      <div class="font-semibold">
+      <div class="font-medium">
         Contact Us
       </div>
     </div>
 
-    <div class="flex justify-center">
+    <div class="flex justify-center border-t-2 ">
       <div class="text-sm my-4">Copyright © 2022 Atlassian</div>
     </div>
   </footer>

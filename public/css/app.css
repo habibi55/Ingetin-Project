@@ -902,6 +902,9 @@ video {
 .border-t-2 {
   border-top-width: 2px;
 }
+.border-b-2 {
+  border-bottom-width: 2px;
+}
 .border-gray-200 {
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
@@ -1046,6 +1049,10 @@ video {
 .py-1 {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
+}
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 .pt-8 {
   padding-top: 2rem;
