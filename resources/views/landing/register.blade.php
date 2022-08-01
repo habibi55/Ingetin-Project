@@ -5,7 +5,7 @@
 <main class="flex justify-center items-center">
 
   <!-- START: Left-Content -->
-  <div class="w-1/2 hidden lg:inline bg-green-200 h-screen">
+  <div class="w-1/2 hidden lg:inline bg-primer h-screen">
   </div>
   <!-- END: Left-Content -->
 
@@ -46,13 +46,13 @@
             id="password" type="password" placeholder="At least 8 characters" required>
         </div>
 
-        <button type="submit" class="mt-4 font-medium text-white bg-green-600 py-2 border rounded-md w-full">
+        <button type="submit" class="mt-4 font-medium text-white bg-primer hover:bg-primer_2 py-2 border rounded-md w-full">
           Sign Up
         </button>
       </div>
 
       <div class="w-full text-center mt-4">
-        Already have account? <a class="text-green-600 font-medium" href="{{ route('login') }}">Sign in</a>
+        Already have account? <a class="text-primer font-medium" href="{{ route('login') }}">Sign in</a>
       </div>
 
     </form>

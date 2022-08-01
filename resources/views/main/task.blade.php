@@ -34,9 +34,12 @@
         <a href="{{ route('task-detail', $task->id) }}" class="flex flex-col items-start rounded-lg bg-white shadow-md cursor-pointer">
           <div class="w-full flex flex-col items-start px-3 py-2">
             <h1 class="font-semibold text-base mb-1">{{ $task->title ?? '' }} </h1>
-            <div>{{ \Carbon\Carbon::parse( $task->deadline )->subDay() }}</div>
+            {{-- <div>{{ \Carbon\Carbon::parse( $task->deadline )->subDay() }}</div>
             <div>{{ \Carbon\Carbon::parse( $task->deadline )->subDay()->toDayDateTimeString() }}</div>
-            <div>{{ $task->before_deadline2 }}</div>
+            <div>{{ $task->before_deadline2 }}</div> --}}
+            <div>{{ \Carbon\Carbon::parse($task->notif_deadline) }}</div>
+
+            {{-- <p id="DateNow"></p> --}}
               
 
             <!-- Label -->

@@ -139,3 +139,11 @@ function closeModal(modal) {
         $(this).closest('#inputFormServicesRow').remove();
     });
 </script>
+
+{{-- Date --}}
+<script>
+  let myDate = new Date().toLocaleString();
+  document.getElementById("DateNow").innerHTML = myDate;
+  console.log(myDate);
+
+</script>

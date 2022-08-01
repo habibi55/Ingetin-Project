@@ -97,8 +97,10 @@ class MainController extends Controller
         //     $gg = $dt->subDay();
         // }
 
-        // $tasks = new Task;
+        $tasks = new Task;
 
+        $tasks->notif_deadline = Carbon::now('Asia/Jakarta');
+        // $tasks->notif_deadline = Carbon::parse($tasks->deadline)->subDay();
 
 
         $this->validate($request, [

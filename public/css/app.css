@@ -1042,6 +1042,10 @@ video {
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
 }
+.px-44 {
+  padding-left: 11rem;
+  padding-right: 11rem;
+}
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -1057,14 +1061,6 @@ video {
 .py-1 {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
-}
-.px-12 {
-  padding-left: 3rem;
-  padding-right: 3rem;
-}
-.px-44 {
-  padding-left: 11rem;
-  padding-right: 11rem;
 }
 .pt-8 {
   padding-top: 2rem;
@@ -1213,6 +1209,10 @@ video {
 .text-red-600 {
   --tw-text-opacity: 1;
   color: rgb(220 38 38 / var(--tw-text-opacity));
+}
+.text-primer {
+  --tw-text-opacity: 1;
+  color: rgb(58 175 169 / var(--tw-text-opacity));
 }
 .underline {
   -webkit-text-decoration-line: underline;
