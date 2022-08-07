@@ -1,6 +1,8 @@
 {{-- JQuery --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
 
 {{-- Logika Hamburger Navbar --}}
 <script>
@@ -17,48 +19,6 @@
 </script>
 
 {{-- Logika Pop Up Task --}}
-<script>
-const openModalButtons = document.querySelectorAll("[data-modal-target]");
-const closeModalButtons = document.querySelectorAll("[data-close-button]");
-const overlay = document.getElementById("overlay");
-
-function edit() {
-  document.getElementById("kategori").innerHTML = "Kelompok";
-}
-
-overlay.addEventListener("click", () => {
-  const modals = document.querySelectorAll(".modal.active");
-  modals.forEach((modal) => {
-    closeModal(modal);
-  });
-});
-
-openModalButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const modal = document.querySelector(button.dataset.modalTarget);
-    openModal(modal);
-  });
-});
-
-closeModalButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const modal = button.closest(".modal");
-    closeModal(modal);
-  });
-});
-
-function openModal(modal) {
-  if (modal == null) return;
-  modal.classList.add("active");
-  overlay.classList.add("active");
-}
-
-function closeModal(modal) {
-  if (modal == null) return;
-  modal.classList.remove("active");
-  overlay.classList.remove("active");
-}
-</script>
 
 {{-- Dropdown Profile --}}
 <script>
@@ -125,7 +85,7 @@ function closeModal(modal) {
   </script>
 
 {{-- Nambah Kategori --}}
-<script type="text/javascript">
+{{-- <script type="text/javascript">
     // add row
     $("#addCategoryCol").click(function() {
         var html = '';
@@ -138,12 +98,51 @@ function closeModal(modal) {
     $(document).on('click', '#removeServicesRow', function() {
         $(this).closest('#inputFormServicesRow').remove();
     });
-</script>
+</script> --}}
 
-{{-- Date --}}
-<script>
-  let myDate = new Date().toLocaleString();
-  document.getElementById("DateNow").innerHTML = myDate;
-  console.log(myDate);
+{{-- Logika Search --}}
 
-</script>
+{{-- 1 --}}
+{{-- <script>
+    $(document).ready(function(){
+      $('#search').on('keyup',function(){
+          var query= $(this).val();
+          $.ajax({
+            url:"/search",
+            type:"get",
+            data:{'search':query},
+            success:function(data){
+                $('.mytask').html(data);
+            }
+      });
+    });
+    });
+</script> --}}
+
+{{-- <script type="text/javascript">
+    $(document).ready(function () {
+      
+        $('#search').on('keyup',function() {
+            var query = $(this).val(); 
+            $.ajax({
+                url:"/search",
+                type:"GET",
+                data:{'search':query},
+                success:function (data) {
+                    $('#mytask').html(data);
+                }
+            })
+            // end of ajax call
+        });
+
+        $(document).on('click', 'li', function(){
+            var value = $(this).text();
+            $('#search').val(value);
+            $('#mytask').html("");
+        });
+    });
+</script> --}}
+
+
+
+

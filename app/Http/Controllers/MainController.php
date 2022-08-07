@@ -15,6 +15,7 @@ use App\Models\Task;
 use App\Models\Category;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use DB;
 
 use Illuminate\Support\Str;
 use File;
@@ -76,7 +77,7 @@ class MainController extends Controller
     //Custom
     public function index(Request $request)
     {
-        $tasks = Task::where('users_id', Auth::user()->id)->orderBy('created_at', 'desc')->get();
+        $tasks = Task::where('users_id', Auth::user()->id)->orderBy('deadline', 'asc')->get();
         // return view('main.task', ['tasks' => $tasks]);
 
         // $tasks = Task::all();
@@ -90,18 +91,7 @@ class MainController extends Controller
 
     public function store(Request $request)
     {
-
-
-        // if ($request->has('deadline')) {
-        //     $dt = Carbon::parse($request->get('deadline'));
-        //     $gg = $dt->subDay();
-        // }
-
         $tasks = new Task;
-
-        $tasks->notif_deadline = Carbon::now('Asia/Jakarta');
-        // $tasks->notif_deadline = Carbon::parse($tasks->deadline)->subDay();
-
 
         $this->validate($request, [
             'photo' => 'mimes:jpeg,png,jpg',
@@ -120,7 +110,6 @@ class MainController extends Controller
             'title' => $request->get('title'),
             'status' => $request->get('status'),
             'deadline' => $request->get('deadline'),
-            'notif_deadline' => $request->get('notif_deadline'),
             'category' => $request->get('category'),
             'photo' => $filenameSimpan,
             'link' => $request->get('link'),
@@ -161,30 +150,6 @@ class MainController extends Controller
             $filenameSimpan = $task->photo;
         }
 
-        // // Category
-        // $tasks = $request->all();
-
-        // // update to service
-        // $task->update($tasks);
-
-        // // update to category
-        // foreach ($tasks['categorys'] as $key => $value) {
-        //     $category = Category::find($key);
-        //     $category->category = $value;
-        //     $category->save();
-        // }
-
-        // //add new category
-        // if (isset($tasks['category'])) {
-        //     foreach ($tasks['category'] as $key => $value) {
-        //         $category = new Category;
-        //         $category->task_id = $task['id'];
-        //         $category->category = $value;
-        //         $category->save();
-        //     }
-        // }
-
-
         $task->title = $request['title'];
         $task->deadline = $request['deadline'];
         $task->link = $request['link'];
@@ -207,4 +172,29 @@ class MainController extends Controller
 
         return redirect()->route('task.index');
     }
+
+    // public function search(Request $request)
+    // {
+    //     // Search Bug Semua Task jadi Muncul
+    //     if ($request->ajax()) {
+    //         $tasks = Task::where('title', 'LIKE', '%' . $request->search . '%')
+    //             // ->orwhere('description', 'like', '%' . $request->search . '%')
+    //             ->get();
+
+    //         $output = '';
+    //         if (count($tasks) > 0) {
+    //             $output = '<div class="flex flex-col bg-white p-4 shadow-md">';
+    //             foreach ($tasks as $task) {
+    //                 $output .=
+    //                     '<div class="flex">
+    //                             <h5 class="flex"><b>' . $task->title . '</b></h5>
+    //                         </div>';
+    //             }
+    //             $output .= '</div>';
+    //         } else {
+    //             $output .= '<div class="flex">' . 'No results' . '</div>';
+    //         }
+    //         return $output;
+    //     }
+    // }
 }

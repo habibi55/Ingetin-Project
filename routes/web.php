@@ -34,8 +34,11 @@ Route::post('register', [LandingController::class, 'store']);
 // Task
 Route::get('task', [LandingController::class, 'task'])->middleware('auth')->name('task');
 
+
+
 // Tambah Task
 Route::resource('task', MainController::class)->middleware(['auth']);
+Route::get('/search', [MainController::class, 'search']);
 
 Route::get('task-detail/{id}', [DetailController::class, 'index'])->name('task-detail');
 

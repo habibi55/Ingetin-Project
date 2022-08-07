@@ -7,8 +7,10 @@
   @stack('before-style')
 
     @include('heading.style')
+    @livewireStyles
 
   @stack('after-style')
+  
 
 </head>
 <body class="font-poppins">
@@ -20,8 +22,11 @@
   @stack('before-script')
 
     @include('heading.script')
+    @livewireScripts
 
   @stack('after-script')
+
+ 
 
 </body>
 </html>

@@ -38,7 +38,7 @@
   </button>
 
   <nav class="hidden top-navbar w-full md:flex lg:flex lg:flex-grow lg:w-auto pt-0 lg:pt-0" id="navigation">
-    <div class="w-full flex flex-col items-start lg:inline-flex  lg:ml-auto lg:w-auto lg:items-center
+    <div class="w-full flex flex-col items-start lg:inline-flex lg:ml-auto lg:w-auto lg:items-center
       lg:h-auto space-y-4 lg:space-y-0 lg:space-x-6">
 
       <svg xmlns="http://www.w3.org/2000/svg" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24"
