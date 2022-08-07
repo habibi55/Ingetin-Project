@@ -8,10 +8,10 @@
         </button>
     </form><br>
 
-    <div class="flex flex-col fixed bg-white rounded-md mt-12 p-2 w-96">
+    <div class="flex flex-col fixed bg-white rounded-md mt-12 p-2 w-110">
         @if($tasks && $tasks->count() > 0)
             @foreach($tasks as $task)
-            <a href="{{ route('task-detail', $task->id) }}" class="flex flex-row mb-2 bg-white justify-between p-1 rounded-md gap-2 shadow-md">
+            <a href="{{ route('task-detail', $task->id) }}" class="flex flex-row mb-2 bg-white justify-between p-3 rounded-md gap-2 shadow-md">
                 <div class="flex flex-row items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" class="ionicon h-5 w-5 mr-1" viewBox="0 0 512 512"><title>Clipboard</title><path d="M336 64h32a48 48 0 0148 48v320a48 48 0 01-48 48H144a48 48 0 01-48-48V112a48 48 0 0148-48h32" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"/><rect x="176" y="32" width="160" height="64" rx="26.13" ry="26.13" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"/></svg>
                     <div class="">{{$task->title}}</div>
