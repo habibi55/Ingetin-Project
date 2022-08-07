@@ -1,4 +1,4 @@
-<header class="w-full flex flex-wrap justify-between p-4 px-2 md:px-6 bg-white fixed">
+<header class="w-full flex flex-wrap justify-between items-center px-2 md:px-6 bg-white fixed">
   <div class="flex items-center">
     <a class="flex items-center" href="/task">
       <svg class="max-h-10 fill-cyan-700" xmlns="http://www.w3.org/2000/svg"
@@ -37,15 +37,18 @@
     <i class="fa-solid fa-bars"></i>
   </button>
 
-  <nav class="hidden top-navbar w-full md:flex lg:flex lg:flex-grow lg:w-auto pt-0 lg:pt-0" id="navigation">
-    <div class="w-full flex flex-col items-start lg:inline-flex lg:ml-auto lg:w-auto lg:items-center
-      lg:h-auto space-y-4 lg:space-y-0 lg:space-x-6">
+  <nav class="hidden top-navbar justify-end items-center w-full md:flex lg:flex lg:flex-grow lg:w-auto" id="navigation">
+    @livewire('tasks')
+
+    <div class="w-full flex flex-col items-start lg:inline-flex lg:w-auto lg:items-center
+      lg:h-auto space-y-4 ">
 
       <svg xmlns="http://www.w3.org/2000/svg" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24"
         stroke="currentColor" stroke-width="2">
         <path stroke-linecap="round" stroke-linejoin="round"
           d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
       </svg>
+        
 
       <div @click.away="open = false" class="hidden lg:block relative" x-data="{ open: false }">
         <button @click="open = !open"
@@ -85,7 +88,7 @@
       </div>
 
       <!-- Navigation in Small -->
-      <a class="nav-small" href="">Notification</a>
+      {{-- <a class="nav-small" href="">Notification</a> --}}
       <a class="nav-small" href="{{ route('profile.index') }}">Profile</a>
       @auth
       <form action="{{ route('logout') }}" method="post">

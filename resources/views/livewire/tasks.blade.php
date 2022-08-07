@@ -1,5 +1,5 @@
-<div class="flex flex-col ml-10 items-end">
-    <form class="flex flex-row ">
+<div class="flex flex-col ml-5 items-end pt-6">
+    <form class="flex flex-row">
         <input wire:model="searchTerm" type="text" id="search" name="search" class=" px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-primer rounded-full transition ease-in-out focus:text-gray-700 focus:bg-white focus:border-primer focus:outline-none" placeholder="Search" >
         <button class="ml-1 rounded-full btn px-3 py-3 bg-primer shadow-md hover:bg-primer_2 hover:shadow-lg focus:bg-blue-700  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out flex items-center" type="button" id="button-addon2">
             <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="w-4" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -8,9 +8,9 @@
         </button>
     </form><br>
 
-    <div class="flex flex-col fixed bg-white rounded-md  p-2 mt-12 w-96">
-        @if($task && $task->count() > 0)
-            @foreach($task as $task)
+    <div class="flex flex-col fixed bg-white rounded-md mt-12 p-2 w-96">
+        @if($tasks && $tasks->count() > 0)
+            @foreach($tasks as $task)
             <a href="{{ route('task-detail', $task->id) }}" class="flex flex-row mb-2 bg-white justify-between p-1 rounded-md gap-2 shadow-md">
                 <div class="flex flex-row items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" class="ionicon h-5 w-5 mr-1" viewBox="0 0 512 512"><title>Clipboard</title><path d="M336 64h32a48 48 0 0148 48v320a48 48 0 01-48 48H144a48 48 0 01-48-48V112a48 48 0 0148-48h32" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"/><rect x="176" y="32" width="160" height="64" rx="26.13" ry="26.13" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"/></svg>
@@ -18,7 +18,29 @@
                 </div>
 
                 <div class="">
-                    {{  $task->status }}
+                    @if ($task->status == '1')
+                        <div class="bg-purple-400 text-base rounded-sm text-center px-2">
+                        Unscheduled
+                        </div>
+                    @endif
+                    
+                    @if ($task->status == '2')
+                        <div class="bg-red-400 text-base rounded-sm text-center px-2">
+                        Not Started
+                        </div>
+                    @endif
+
+                    @if ($task->status == '3')
+                        <div class="bg-orange-400 text-base rounded-sm text-center px-2">
+                        In Progress
+                        </div>
+                    @endif
+
+                    @if ($task->status == '4')
+                        <div class="bg-green-400 text-base rounded-sm text-center px-2">
+                        Completed
+                        </div>
+                    @endif
                 </div>
             </a>
             @endforeach

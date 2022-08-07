@@ -45,7 +45,7 @@
             </div>
           @endif
 
-            @if ($tasks->status == '4')
+          @if ($tasks->status == '4')
             <div class="bg-green-400 text-base rounded-sm text-center px-2">
               Completed
             </div>

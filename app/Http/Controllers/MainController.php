@@ -78,9 +78,7 @@ class MainController extends Controller
     public function index(Request $request)
     {
         $tasks = Task::where('users_id', Auth::user()->id)->orderBy('deadline', 'asc')->get();
-        // return view('main.task', ['tasks' => $tasks]);
 
-        // $tasks = Task::all();
         return view('main.task', compact('tasks'));
     }
 
