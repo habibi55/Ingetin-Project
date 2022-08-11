@@ -7,6 +7,7 @@ use App\Http\Controllers\LandingController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\DetailController;
+use App\Http\Livewire\Tasks;
 
 
 /*
@@ -36,7 +37,7 @@ Route::get('task', [LandingController::class, 'task'])->middleware('auth')->name
 
 // Tambah Task
 Route::resource('task', MainController::class)->middleware(['auth']);
-Route::get('/search', [MainController::class, 'search']);
+Route::get('/search', [Tasks::class, 'render']);
 
 Route::get('task-detail/{id}', [DetailController::class, 'index'])->name('task-detail');
 

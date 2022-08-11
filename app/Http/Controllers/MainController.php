@@ -170,29 +170,4 @@ class MainController extends Controller
 
         return redirect()->route('task.index');
     }
-
-    // public function search(Request $request)
-    // {
-    //     // Search Bug Semua Task jadi Muncul
-    //     if ($request->ajax()) {
-    //         $tasks = Task::where('title', 'LIKE', '%' . $request->search . '%')
-    //             // ->orwhere('description', 'like', '%' . $request->search . '%')
-    //             ->get();
-
-    //         $output = '';
-    //         if (count($tasks) > 0) {
-    //             $output = '<div class="flex flex-col bg-white p-4 shadow-md">';
-    //             foreach ($tasks as $task) {
-    //                 $output .=
-    //                     '<div class="flex">
-    //                             <h5 class="flex"><b>' . $task->title . '</b></h5>
-    //                         </div>';
-    //             }
-    //             $output .= '</div>';
-    //         } else {
-    //             $output .= '<div class="flex">' . 'No results' . '</div>';
-    //         }
-    //         return $output;
-    //     }
-    // }
 }

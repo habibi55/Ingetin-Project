@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="flex pt-24 items-center justify-between mx-6">
+<div class="flex pt-20 items-center justify-between mx-6">
   <a href="{{ route('task.create') }}" class="flex flex-row hover:opacity-80 items-center">
     <div class="text-white text-sm font-semibold bg-primer rounded-full px-4 py-2">
       Create Task
@@ -12,13 +12,6 @@
     </svg>
   </a>
 
-</div>
-
-{{-- 1 --}}
-<div class="w-full flex fixed px-6 justify-end z-0">
-    <div id="mytask" class="flex mytask flex-col rounded-md ">
-      {{-- Task --}}
-    </div>
 </div>
 
 <!-- Pembagian Task (FLEX)-->
@@ -37,7 +30,7 @@
 
       @foreach ($tasks as $task)
         @if ($task->status == '1')
-        <a href="{{ route('task-detail', $task->id) }}" class="flex flex-col items-start rounded-lg bg-white shadow-md cursor-pointer">
+        <a href="{{ route('task-detail', $task->id) }}" class="flex flex-col items-start rounded-lg bg-white shadow-md cursor-pointer hover:bg-slate-100">
           <div class="w-full flex flex-col items-start px-3 py-2">
             <h1 class="font-semibold text-base mb-1">{{ $task->title ?? '' }} </h1>
 
@@ -168,7 +161,7 @@
     <div class="flex flex-col flex-nowrap px-3 pb-3 gap-3">
       @foreach ($tasks as $task)
         @if ($task->status == '2')
-        <a href="{{ route('task-detail', $task->id) }}" class="flex flex-col items-start rounded-lg bg-white shadow-md cursor-pointer">
+        <a href="{{ route('task-detail', $task->id) }}" class="flex flex-col items-start rounded-lg bg-white shadow-md cursor-pointer hover:bg-slate-100">
           <div class="w-full flex flex-col items-start px-3 py-2">
             <h1 class="font-semibold text-base mb-1">{{ $task->title ?? '' }} </h1>
 
@@ -300,7 +293,7 @@
 
       @foreach ($tasks as $task)
         @if ($task->status == '3')
-        <a href="{{ route('task-detail', $task->id) }}" class="flex flex-col items-start rounded-lg bg-white shadow-md cursor-pointer">
+        <a href="{{ route('task-detail', $task->id) }}" class="flex flex-col items-start rounded-lg bg-white shadow-md cursor-pointer hover:bg-slate-100">
           <div class="w-full flex flex-col items-start px-3 py-2">
             <h1 class="font-semibold text-base mb-1">{{ $task->title ?? '' }} </h1>
 
@@ -431,7 +424,7 @@
 
       @foreach ($tasks as $task)
         @if ($task->status == '4')
-        <a href="{{ route('task-detail', $task->id) }}" class="flex flex-col items-start rounded-lg bg-white shadow-md cursor-pointer">
+        <a href="{{ route('task-detail', $task->id) }}" class="flex flex-col items-start rounded-lg bg-white shadow-md cursor-pointer hover:bg-slate-100">
           <div class="w-full flex flex-col items-start px-3 py-2">
             <h1 class="font-semibold text-base mb-1">{{ $task->title ?? '' }} </h1>
 

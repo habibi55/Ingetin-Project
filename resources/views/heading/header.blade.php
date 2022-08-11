@@ -1,4 +1,4 @@
-<header class="w-full flex flex-wrap justify-between items-center px-2 md:px-6 bg-white fixed">
+<header class="w-full flex flex-wrap justify-between items-center pt-6 px-2 md:px-6 bg-white fixed">
   <div class="flex items-center">
     <a class="flex items-center" href="/task">
       <svg class="max-h-10 fill-cyan-700" xmlns="http://www.w3.org/2000/svg"
@@ -41,7 +41,7 @@
     @livewire('tasks')
 
     <div class="w-full flex flex-col items-start lg:inline-flex lg:w-auto lg:items-center
-      lg:h-auto space-y-4 ">
+      lg:h-auto ">
 
       <svg xmlns="http://www.w3.org/2000/svg" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24"
         stroke="currentColor" stroke-width="2">

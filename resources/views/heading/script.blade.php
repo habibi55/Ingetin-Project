@@ -102,45 +102,23 @@
 
 {{-- Logika Search --}}
 
-{{-- 1 --}}
-{{-- <script>
-    $(document).ready(function(){
-      $('#search').on('keyup',function(){
-          var query= $(this).val();
-          $.ajax({
-            url:"/search",
-            type:"get",
-            data:{'search':query},
-            success:function(data){
-                $('.mytask').html(data);
-            }
-      });
-    });
-    });
-</script> --}}
-
 {{-- <script type="text/javascript">
-    $(document).ready(function () {
+$(document).ready(function(){
       
-        $('#search').on('keyup',function() {
-            var query = $(this).val(); 
-            $.ajax({
-                url:"/search",
-                type:"GET",
-                data:{'search':query},
-                success:function (data) {
-                    $('#mytask').html(data);
-                }
+    $('#search').keyup(function()
+        var search = $('#search').val();
+        if(search==""){
+            $("#memList").html("");
+            $('#result').hide();
+        }
+        else{
+            $.get("{{ URL::to('search') }}",{search:search}, function(data){
+                $('#memList').empty().html(data);
+                $('#result').show();
             })
-            // end of ajax call
-        });
-
-        $(document).on('click', 'li', function(){
-            var value = $(this).text();
-            $('#search').val(value);
-            $('#mytask').html("");
-        });
-    });
+        }
+    );
+});
 </script> --}}
 
 

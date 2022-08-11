@@ -22,9 +22,7 @@
             href="{{ route('login') }}">Log
             In</a></button>
         <button class="w-full lg:w-auto text-white font-medium bg-primer px-3 py-2 rounded-md hover:bg-primer_2"> <a
-            href="{{ route('register') }}">Get Ingetin
-            for
-            free</a>
+            href="{{ route('register') }}">Register</a>
         </button>
       </div>
     </nav>
