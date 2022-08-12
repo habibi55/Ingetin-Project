@@ -27,7 +27,7 @@
             fill-opacity="1" fill-rule="nonzero" />
         </g>
       </svg>
-      <h2 class="pl-1 text-xl font-bold">Ingetin</h2>
+      <h2 class="pl-1 text-xl font-bold">Rapih</h2>
     </a>
   </div>
 
@@ -68,17 +68,17 @@
           x-transition:leave-start="transform opacity-100 scale-100"
           x-transition:leave-end="transform opacity-0 scale-95"
           class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
-          <div class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800">
+          <div class="flex flex-col px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800">
             <a class="block px-4 py-2 mt-2 text-sm bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
               href="{{ route('profile.index') }}">
               Profile
             </a>
 
             @auth
-            <form action="{{ route('logout') }}" method="post">
+            <form class="w-full mt-2" action="{{ route('logout') }}" method="post">
               @csrf
               @method("DELETE")
-              <button class="inline-flex px-4 py-2 mt-2 text-sm bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">
+              <button class="block px-4 py-2 mt-2 text-sm bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">
                 Logout
               </button>
             </form>

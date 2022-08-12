@@ -35,7 +35,7 @@ class LandingController extends Controller
         $validatedData = $request->validate([
             "name"  => 'required|max:255',
             'email' => 'required|email|unique:users|max:255',
-            'password'  => 'required|min:5|max:255'
+            'password'  => 'required|min:8|max:255'
         ]);
         // hash password
         $validatedData['password'] = Hash::make($validatedData['password']);

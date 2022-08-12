@@ -19,12 +19,12 @@
 
         <div class="w-full flex flex-col mt-4">
           <label class="text-lg" for="name">Full Name</label>
-          <input name="name" class="bg-slate-100 rounded-lg py-3 px-4 text-base mt-2" id="email" type="text" value="{{ $detail->name }}">
+          <input name="name" class="bg-slate-100 rounded-lg py-3 px-4 text-base mt-2" id="email" type="text" value="{{ $detail->name }}" required>
         </div>
 
         <div class="w-full flex flex-col mt-4">
           <label class="text-lg" for="email">Email</label>
-          <input name="email" class="bg-slate-100 rounded-lg py-3 px-4 text-base mt-2" id="email" type="email" value="{{ $detail->email }}">
+          <input name="email" class="bg-slate-100 rounded-lg py-3 px-4 text-base mt-2" id="email" type="email" value="{{ $detail->email }}" required>
         </div>
 
         <div class="w-full flex flex-row justify-end gap-4 mt-4">

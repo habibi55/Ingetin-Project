@@ -12,7 +12,7 @@
     <div class="flex flex-col w-full md:w-1/2 justify-center items-center px-16 md:px-44 h-screen">
 
       <!-- Header -->
-      <h1 class="font-semibold text-center text-2xl md:text-3xl mb-2">Log in to Ingetin</h1>
+      <h1 class="font-semibold text-center text-2xl md:text-3xl mb-2">Log in to Rapih</h1>
       <h2 class="w-full opacity-50 text-center mb-3 text-xs md:text-sm">Enter your email & password to continue</h2>
 
       <!-- Body -->
