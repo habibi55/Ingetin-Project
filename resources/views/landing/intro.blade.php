@@ -29,10 +29,10 @@
   </header>
 
   <main class="flex flex-col">
-    <div class="flex flex-col-reverse lg:flex-row py-10 ">
-      <div class="flex flex-col w-1/2 justify-center">
-        <h1 class="leading-snug font-semibold text-4xl mb-4">Rapih organize every task <br> that ur built</h1>
-        <p class="text-lg mb-10">Manage schedule and reach new productivity peaks <br> Private workspace for every
+    <div class="flex flex-col-reverse lg:flex-row py-5 md:py-10">
+      <div class="flex flex-col w-full md:w-1/2 justify-center items-center md:items-start">
+        <div class="leading-snug font-semibold text-2xl md:text-4xl md:mb-4 py-3 md:py-0 text-center md:text-left">Rapih organize every task <br> that ur built</div>
+        <p class="text-base p-3 md:p-0 md:text-lg mb-2 md:mb-10 text-center md:text-left">Manage schedule and reach new productivity peaks <br> Private workspace for every
           students
           <br>
           Rapih know
@@ -46,8 +46,8 @@
         </button>
       </div>
 
-      <div class="flex w-1/2 justify-center">
-        <svg class="max-h-80" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 947.48 1240.91">
+      <div class="flex w-full md:w-1/2 justify-center">
+        <svg class="max-h-64 md:max-h-80" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 947.48 1240.91">
           <defs>
             <style>
               .cls-1,
@@ -274,8 +274,8 @@
     </div>
 
 
-    <div class="flex flex-col items-center py-10">
-      <div class="font-medium text-2xl">
+    <div class="flex flex-col items-center py-0 md:py-10">
+      <div class="font-medium text-2xl ">
         It’s more than work. It’s a way of work well.
       </div>
 

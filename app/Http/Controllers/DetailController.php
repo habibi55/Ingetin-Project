@@ -38,9 +38,9 @@ class DetailController extends Controller
         // Category
         // $service = Service::where('id', $id)->first();
 
-        $category = Category::where('task_id', $id)->get();
+        // $category = Category::where('task_id', $id)->get();
 
-        return view('main.task-detail', compact('category'), ['tasks' => $tasks]);
+        return view('main.task-detail', ['tasks' => $tasks]);
     }
 
     public function destroy($id)

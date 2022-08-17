@@ -122,9 +122,9 @@ class MainController extends Controller
     public function edit($id)
     {
         $task = Task::find($id);
-        $category = Category::where('task_id', $task['id'])->get();
+        // $category = Category::where('task_id', $task['id'])->get();
 
-        return view('main.task-edit', compact('task', 'category'));
+        return view('main.task-edit', compact('task'));
     }
 
     public function update(Request $request, $id)
