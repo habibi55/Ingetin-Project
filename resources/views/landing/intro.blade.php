@@ -5,7 +5,7 @@
 <div class="container mx-auto w-full lg:px-44">
   <header class="flex justify-between p-4 lg:px-0 flex-wrap">
     <div class="flex items-center">
-      <svg class="h-10 w-10" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="500" zoomAndPan="magnify" viewBox="0 0 375 374.999991" height="500" preserveAspectRatio="xMidYMid meet" version="1.0"><defs><clipPath id="id1"><path d="M 109.035156 32.359375 L 342.859375 32.359375 L 342.859375 266 L 109.035156 266 Z M 109.035156 32.359375 " clip-rule="nonzero"/></clipPath><clipPath id="id2"><path d="M 32.359375 109.035156 L 266 109.035156 L 266 342.859375 L 32.359375 342.859375 Z M 32.359375 109.035156 " clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#id1)"><path fill="#0e7490" d="M 109.496094 32.363281 L 109.496094 93.015625 L 146.953125 93.015625 L 146.953125 69.816406 L 305.402344 69.816406 L 305.402344 228.269531 L 146.953125 228.269531 L 146.953125 163.433594 L 109.496094 163.433594 L 109.496094 265.722656 L 342.855469 265.722656 L 342.855469 32.363281 L 109.496094 32.363281 " fill-opacity="1" fill-rule="nonzero"/></g><g clip-path="url(#id2)"><path fill="rgb(0%, 0%, 0%)" d="M 228.265625 305.402344 L 69.816406 305.402344 L 69.816406 146.953125 L 228.265625 146.953125 L 228.265625 211.785156 L 265.722656 211.785156 L 265.71875 109.5 L 32.359375 109.5 L 32.359375 342.859375 L 265.722656 342.859375 L 265.722656 282.203125 L 228.265625 282.203125 L 228.265625 305.402344 " fill-opacity="1" fill-rule="nonzero"/></g></svg>
+      <svg class="h-10 w-10" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="500" zoomAndPan="magnify" viewBox="0 0 375 374.999991" height="500" preserveAspectRatio="xMidYMid meet" version="1.0"><defs><clipPath id="id1"><path d="M 109.035156 32.359375 L 342.859375 32.359375 L 342.859375 266 L 109.035156 266 Z M 109.035156 32.359375 " clip-rule="nonzero"/></clipPath><clipPath id="id2"><path d="M 32.359375 109.035156 L 266 109.035156 L 266 342.859375 L 32.359375 342.859375 Z M 32.359375 109.035156 " clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#id1)"><path fill="#111" d="M 109.496094 32.363281 L 109.496094 93.015625 L 146.953125 93.015625 L 146.953125 69.816406 L 305.402344 69.816406 L 305.402344 228.269531 L 146.953125 228.269531 L 146.953125 163.433594 L 109.496094 163.433594 L 109.496094 265.722656 L 342.855469 265.722656 L 342.855469 32.363281 L 109.496094 32.363281 " fill-opacity="1" fill-rule="nonzero"/></g><g clip-path="url(#id2)"><path fill="#3AAFA9" d="M 228.265625 305.402344 L 69.816406 305.402344 L 69.816406 146.953125 L 228.265625 146.953125 L 228.265625 211.785156 L 265.722656 211.785156 L 265.71875 109.5 L 32.359375 109.5 L 32.359375 342.859375 L 265.722656 342.859375 L 265.722656 282.203125 L 228.265625 282.203125 L 228.265625 305.402344 " fill-opacity="1" fill-rule="nonzero"/></g></svg>
       <h2 class="pl-1 text-2xl font-bold">Rapih</h2>
     </div>
 
@@ -18,20 +18,20 @@
     <nav class="hidden top-navbar w-full lg:inline-flex lg:flex-grow lg:w-auto pt-6 lg:pt-0" id="navigation">
       <div class="w-full flex flex-col items-start lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto lg:items-center
         lg:h-auto space-y-4 lg:space-y-0 lg:space-x-6">
-        <button class="w-full lg:w-auto border-2 lg:border-0 font-medium rounded-md px-4 py-2 hover:bg-gray-200"> <a
-            href="{{ route('login') }}">Log
-            In</a></button>
-        <button class="w-full lg:w-auto text-white font-medium bg-primer px-3 py-2 rounded-md hover:bg-primer_2"> <a
-            href="{{ route('register') }}">Register</a>
-        </button>
+        <a href="{{ route('login') }}" class="w-full lg:w-auto text-center border-2 lg:border-0 font-medium rounded-md px-4 py-2 hover:bg-gray-200"> 
+            Log
+            In</a>
+        <a href="{{ route('register') }}" class="w-full text-center lg:w-auto text-white font-medium bg-primer px-3 py-2 rounded-md hover:bg-primer_2"> 
+            Register
+        </a>
       </div>
     </nav>
   </header>
 
   <main class="flex flex-col">
     <div class="flex flex-col-reverse lg:flex-row py-5 md:py-10">
-      <div class="flex flex-col w-full md:w-1/2 justify-center items-center md:items-start">
-        <div class="leading-snug font-semibold text-2xl md:text-4xl md:mb-4 py-3 md:py-0 text-center md:text-left">Rapih organize every task <br> that ur built</div>
+      <div class="flex flex-col p-3 md:p-0 w-full md:w-1/2 justify-center items-center md:items-start">
+        <div class="leading-snug font-semibold text-3xl md:text-4xl md:mb-4 py-3 md:py-0 text-center md:text-left">Rapih organize every task <br> that ur built</div>
         <p class="text-base p-3 md:p-0 md:text-lg mb-2 md:mb-10 text-center md:text-left">Manage schedule and reach new productivity peaks <br> Private workspace for every
           students
           <br>
@@ -39,15 +39,15 @@
           what
           u
           need.</p>
-        <button class="w-fit text-white font-medium bg-primer px-3 py-2 rounded-md hover:bg-primer_2"> <a
+        <button class="w-full md:w-fit text-white font-medium bg-primer px-3 py-2  rounded-md hover:bg-primer_2"> <a
             href="{{ route('register') }}">Get Rapih
             for
             free</a>
         </button>
       </div>
 
-      <div class="flex w-full md:w-1/2 justify-center">
-        <svg class="max-h-64 md:max-h-80" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 947.48 1240.91">
+      <div class="flex w-full md:w-1/2 justify-center pb-3 md:pb-0">
+        <svg class="max-h-80" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 947.48 1240.91">
           <defs>
             <style>
               .cls-1,
@@ -274,12 +274,16 @@
     </div>
 
 
-    <div class="flex flex-col items-center py-0 md:py-10">
-      <div class="font-medium text-2xl ">
+    <div class="flex md:hidden border-t-2 m-4">
+
+    </div>
+
+    <div class="flex flex-col items-center pt-4 md:pt-10 py-0 md:py-10">
+      <div class="font-medium text-2xl text-center">
         It’s more than work. It’s a way of work well.
       </div>
 
-      <div class="text-center py-4 px-44">
+      <div class="text-center py-4 px-2 md:px-44">
         Start with a rapih board, lists, and cards. Customize and expand with more features. Manage projects, organize tasks, and your spirit—all in one place.
       </div>
 
@@ -290,8 +294,11 @@
 
   </main>
 
+    <div class="flex md:hidden border-t-2 m-4">
+    </div>
+
     <footer class="flex flex-col justify-center opacity-90">
-      <div class="flex justify-between py-8">
+      <div class="flex flex-col md:flex-row gap-8 p-6 md:p-0 justify-between py-8 md:py-8">
         <div class="flex items-center self-start">
           <svg class="h-10 w-10" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="500" zoomAndPan="magnify" viewBox="0 0 375 374.999991" height="500" preserveAspectRatio="xMidYMid meet" version="1.0"><defs><clipPath id="id1"><path d="M 109.035156 32.359375 L 342.859375 32.359375 L 342.859375 266 L 109.035156 266 Z M 109.035156 32.359375 " clip-rule="nonzero"/></clipPath><clipPath id="id2"><path d="M 32.359375 109.035156 L 266 109.035156 L 266 342.859375 L 32.359375 342.859375 Z M 32.359375 109.035156 " clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#id1)"><path fill="#111" d="M 109.496094 32.363281 L 109.496094 93.015625 L 146.953125 93.015625 L 146.953125 69.816406 L 305.402344 69.816406 L 305.402344 228.269531 L 146.953125 228.269531 L 146.953125 163.433594 L 109.496094 163.433594 L 109.496094 265.722656 L 342.855469 265.722656 L 342.855469 32.363281 L 109.496094 32.363281 " fill-opacity="1" fill-rule="nonzero"/></g><g clip-path="url(#id2)"><path fill="#3AAFA9" d="M 228.265625 305.402344 L 69.816406 305.402344 L 69.816406 146.953125 L 228.265625 146.953125 L 228.265625 211.785156 L 265.722656 211.785156 L 265.71875 109.5 L 32.359375 109.5 L 32.359375 342.859375 L 265.722656 342.859375 L 265.722656 282.203125 L 228.265625 282.203125 L 228.265625 305.402344 " fill-opacity="1" fill-rule="nonzero"/></g></svg>
           <h2 class="pl-1 text-2xl font-semibold">Rapih</h2>

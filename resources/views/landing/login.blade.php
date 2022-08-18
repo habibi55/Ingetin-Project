@@ -9,7 +9,7 @@
     <!-- END: Left-Content -->
 
     <!-- START: Right-Content -->
-    <div class="flex flex-col w-full md:w-1/2 justify-center items-center px-16 md:px-44 h-screen">
+    <div class="flex flex-col w-full md:w-1/2 justify-center items-center px-8 md:px-44 h-screen">
 
       <!-- Header -->
       <h1 class="font-semibold text-center text-2xl md:text-3xl mb-2">Log in to Rapih</h1>
@@ -27,16 +27,15 @@
         @csrf
 
         <div class="flex flex-col">
-
           <div class="flex flex-col mt-4">
-            <label class="text-xl" for="email">Email</label>
-            <input name="email" class="border border-gray-300 rounded-lg py-3 px-4 text-base mt-2" id="email"
+            <label class="text-base md:text-xl" for="email">Email</label>
+            <input name="email" class="border border-gray-300 rounded-lg py-3 px-4 text-sm md:text-base mt-2" id="email"
               type="email" placeholder="name@domain.com" required autofocus>
           </div>
 
           <div class="flex flex-col mt-4">
-            <label class="text-xl" for="password">Password</label>
-            <input name="password" class="border border-gray-300 rounded-lg py-3 px-4 text-base mt-2" id="password"
+            <label class="text-base md:text-xl" for="password">Password</label>
+            <input name="password" class="border border-gray-300 rounded-lg py-3 px-4 text-sm md:text-base mt-2" id="password"
               type="password" placeholder="At least 8 characters" required autofocus>
           </div>
 

@@ -10,7 +10,7 @@
   <!-- END: Left-Content -->
 
   <!-- START: Right-Content -->
-  <div class="flex flex-col w-full md:w-1/2 justify-center items-center px-16 md:px-44 h-screen">
+  <div class="flex flex-col w-full md:w-1/2 justify-center items-center px-8 md:px-44 h-screen">
 
     <!-- Header -->
     <h1 class="font-semibold text-center text-2xl md:text-3xl mb-2">Sign up to Rapih</h1>
@@ -23,20 +23,20 @@
       <div class="flex flex-col">
 
         <div class="flex flex-col mt-4">
-          <label class="text-xl" for="name">Full Name</label>
-          <input name="name" class="border border-gray-300 rounded-lg py-3 px-4 text-base mt-2" id="email" type="text"
+          <label class="text-base md:text-xl" for="name">Full Name</label>
+          <input name="name" class="border border-gray-300 rounded-lg py-3 px-4 text-sm md:text-base mt-2" id="email" type="text"
             placeholder="Your Name" required>
         </div>
 
         <div class="flex flex-col mt-4">
-          <label class="text-xl" for="email">Email</label>
-          <input name="email" class="border border-gray-300 rounded-lg py-3 px-4 text-base mt-2" id="email"
+          <label class="text-base md:text-xl" for="email">Email</label>
+          <input name="email" class="border border-gray-300 rounded-lg py-3 px-4 text-sm md:text-base mt-2" id="email"
             type="email" placeholder="name@domain.com" required>
         </div>
 
         <div class="flex flex-col mt-4">
-          <label class="text-xl" for="password">Password</label>
-          <input name="password" class="border border-gray-300 rounded-lg py-3 px-4 text-base mt-2 @error('password') is-invalid @enderror" id="password"
+          <label class="text-base md:text-xl" for="password">Password</label>
+          <input name="password" class="border border-gray-300 rounded-lg py-3 px-4 text-sm md:text-base mt-2 @error('password') is-invalid @enderror" id="password"
             type="password" placeholder="At least 8 characters" required>
           @error('password')
               <span class="invalid-feedback mt-1 font-medium text-red-500" role="alert">
@@ -46,8 +46,8 @@
         </div>
 
         <div class="flex flex-col mt-4">
-          <label class="text-xl" for="password_confirmation">Confirm Password</label>
-          <input name="password_confirmation" class="border border-gray-300 rounded-lg py-3 px-4 text-base mt-2 "
+          <label class="text-base md:text-xl" for="password_confirmation">Confirm Password</label>
+          <input name="password_confirmation" class="border border-gray-300 rounded-lg py-3 px-4 text-sm md:text-base mt-2 "
             id="password" type="password" placeholder="At least 8 characters" required>
 
         </div>
