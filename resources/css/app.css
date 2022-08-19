@@ -8,7 +8,15 @@
   }
 
   .form {
-    @apply flex flex-row items-center mb-6;
+    @apply flex flex-col md:flex-row items-start md:items-center mb-6;
+  }
+
+  .form-title {
+    @apply w-4/12 flex flex-row items-center mb-2 md:mb-0;
+  }
+
+  .form-isi {
+    @apply flex w-full md:w-8/12 ;
   }
 
   .label {
@@ -24,7 +32,7 @@
   }
 
   .nav-small {
-    @apply md:hidden w-full text-white rounded-md px-4 py-2 bg-primer_3 hover:bg-primer_3_hover;
+    @apply md:hidden w-full text-center lg:w-auto text-white font-medium bg-primer px-3 py-2 rounded-md hover:bg-primer_2;
   }
 
 }

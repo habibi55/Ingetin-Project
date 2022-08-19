@@ -15,16 +15,13 @@ return new class extends Migration
     {
         Schema::create('task', function (Blueprint $table) {
             $table->id();
-            // $table->foreignId('users_id')->nullable()->index('fk_task_to_users');
             $table->integer('users_id');
             $table->string('title');
             $table->integer('status');
             $table->datetime('deadline')->nullable();
-            // $table->string('category')->nullable();
             $table->string('link')->nullable();
             $table->longText('photo')->nullable();
             $table->longText('description')->nullable();
-            // $table->softDeletes();
             $table->timestamps();
         });
     }
