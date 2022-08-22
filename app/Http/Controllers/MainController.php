@@ -170,4 +170,9 @@ class MainController extends Controller
 
         return redirect()->route('task.index');
     }
+
+    public function search_small()
+    {
+        return view('main.task-search');
+    }
 }

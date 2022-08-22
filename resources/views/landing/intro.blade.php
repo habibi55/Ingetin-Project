@@ -47,7 +47,7 @@
       </div>
 
       <div class="flex w-full md:w-1/2 justify-center pb-3 md:pb-0">
-        <svg class="max-h-80" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 947.48 1240.91">
+        <svg class="md:max-h-80 max-h-60" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 947.48 1240.91">
           <defs>
             <style>
               .cls-1,

@@ -16,7 +16,7 @@
 
 
         @if($tasks && $tasks->count() > 0)
-            <div class="flex flex-col fixed bg-white shadow-md rounded-md mt-12 p-2 w-110 border">
+            <div class="flex flex-col relative md:fixed bg-white shadow-md rounded-md mt-4 md:mt-12 p-2 w-11/12 md:w-110 border">
 
                 <div class="font-semibold">My Task</div>
 
@@ -61,5 +61,4 @@
 
 
 </div>
-
 

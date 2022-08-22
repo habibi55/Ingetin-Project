@@ -84,42 +84,6 @@
           } );
   </script>
 
-{{-- Nambah Kategori --}}
-{{-- <script type="text/javascript">
-    // add row
-    $("#addCategoryCol").click(function() {
-        var html = '';
-        html += '<input type="text" name="category[]" id="category" autocomplete="category" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm">';
-
-        $('#newCategoryCol').append(html);
-    });
-
-    // remove row
-    $(document).on('click', '#removeServicesRow', function() {
-        $(this).closest('#inputFormServicesRow').remove();
-    });
-</script> --}}
-
-{{-- Logika Search --}}
-
-{{-- <script type="text/javascript">
-$(document).ready(function(){
-      
-    $('#search').keyup(function()
-        var search = $('#search').val();
-        if(search==""){
-            $("#memList").html("");
-            $('#result').hide();
-        }
-        else{
-            $.get("{{ URL::to('search') }}",{search:search}, function(data){
-                $('#memList').empty().html(data);
-                $('#result').show();
-            })
-        }
-    );
-});
-</script> --}}
 
 
 
